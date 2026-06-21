@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mkm12.local/schemas/universal_root_gate_spec_v1.schema.json",
+  "title": "Universal Root Gate Spec v1 — Layer A/B/C hierarchical lexicon gating [HYPO]",
+  "description": "Track B research SSOT for NSM root gate + corpus anchor + MDL prune coexistence. Not Track A promotion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "version",
+    "research_only",
+    "send_gate",
+    "hypothesis_class",
+    "architecture",
+    "layers",
+    "metric_planes",
+    "promotion_gates",
+    "forbidden_claims",
+    "domain_matrix",
+    "artifact_pointers",
+    "reproduce"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string",
+      "const": "universal_root_gate_spec_v1"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^1\\.\\d+\\.\\d+$"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "research_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "send_gate": {
+      "type": "string",
+      "const": "HOLD"
+    },
+    "hypothesis_class": {
+      "type": "string",
+      "const": "HYPO"
+    },
+    "track_a_promotion_forbidden": {
+      "type": "boolean",
+      "const": true
+    },
+    "architecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary_ko", "layer_flow"],
+      "properties": {
+        "summary_ko": { "type": "string", "maxLength": 4000 },
+        "layer_flow": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "type": "string", "enum": ["layer_a", "layer_b", "layer_c"] }
+        }
+      }
+    },
+    "layers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layer_a", "layer_b", "layer_c"],
+      "properties": {
+        "layer_a": { "$ref": "#/definitions/layer_spec" },
+        "layer_b": { "$ref": "#/definitions/layer_spec" },
+        "layer_c": { "$ref": "#/definitions/layer_spec" }
+      }
+    },
+    "metric_planes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["compress", "retrieve", "route", "distortion", "cost", "topology"],
+      "properties": {
+        "compress": { "$ref": "#/definitions/metric_plane" },
+        "retrieve": { "$ref": "#/definitions/metric_plane" },
+        "route": { "$ref": "#/definitions/metric_plane" },
+        "distortion": { "$ref": "#/definitions/metric_plane" },
+        "cost": { "$ref": "#/definitions/metric_plane" },
+        "topology": { "$ref": "#/definitions/metric_plane" }
+      }
+    },
+    "promotion_gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["research_ready_decision", "planes"],
+      "properties": {
+        "research_ready_decision": {
+          "type": "string",
+          "enum": ["HOLD", "B_TRACK_RESEARCH_READY"]
+        },
+        "planes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["compress", "retrieve", "route", "distortion", "cost", "layer_c_mdl", "topology"],
+          "properties": {
+            "compress": { "$ref": "#/definitions/gate_thresholds" },
+            "retrieve": { "$ref": "#/definitions/gate_thresholds" },
+            "route": { "$ref": "#/definitions/gate_thresholds" },
+            "distortion": { "$ref": "#/definitions/gate_thresholds" },
+            "cost": { "$ref": "#/definitions/gate_thresholds" },
+            "layer_c_mdl": { "$ref": "#/definitions/gate_thresholds" },
+            "topology": { "$ref": "#/definitions/gate_thresholds" }
+          }
+        }
+      }
+    },
+    "baseline_observed": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "maxLength": 512 }
+    },
+    "domain_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["domain_tag", "layer_a", "layer_b", "sidecar"],
+        "properties": {
+          "domain_tag": { "type": "string" },
+          "layer_a": { "type": "string" },
+          "layer_b": { "type": "string" },
+          "sidecar": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    },
+    "artifact_pointers": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "reproduce": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "lit_review_pointer": { "type": "string" }
+  },
+  "definitions": {
+    "layer_spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "size_order", "must_not_replace"],
+      "properties": {
+        "role": { "type": "string", "maxLength": 2000 },
+        "size_order": { "type": "string", "maxLength": 128 },
+        "must_not_replace": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "implementation_status": {
+          "type": "string",
+          "enum": ["partial", "production_rail", "not_run", "needs_experiment", "poc"]
+        },
+        "scripts": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "metric_plane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "primary_metrics", "script"],
+      "properties": {
+        "scope": { "type": "string", "maxLength": 512 },
+        "primary_metrics": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "script": { "type": "string" },
+        "never_collapse_with": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "gate_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "thresholds"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["number", "integer", "boolean", "string"]
+          }
+        },
+        "notes": { "type": "string", "maxLength": 2000 }
+      }
+    }
+  }
+}

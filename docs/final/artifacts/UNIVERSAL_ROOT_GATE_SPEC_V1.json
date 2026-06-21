@@ -1,0 +1,620 @@
+{
+  "schema": "universal_root_gate_spec_v1",
+  "version": "1.1.0",
+  "generated_at_utc": "2026-06-21T09:40:09Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "hypothesis_class": "HYPO",
+  "track_a_promotion_forbidden": true,
+  "lit_review_pointer": "docs/research/UNIVERSAL_ROOT_LEXICON_MATRIX_LIT_REVIEW_2026-06-21.md",
+  "architecture": {
+    "summary_ko": "41k corpus anchor를 NSM 65 prime으로 대체하지 않는다. Layer A는 shallow 게이트·도메인 태그·NSM prime 라벨(≤3)만, Layer B는 41k+sidecar 검색·압축, Layer C는 MDL surface prune만 담당한다.",
+    "layer_flow": [
+      "layer_a",
+      "layer_b",
+      "layer_c"
+    ]
+  },
+  "layers": {
+    "layer_a": {
+      "role": "Universal Root Gate — cross-domain tags, NSM prime explications (DeepNSM shadow), shallow routing labels only",
+      "size_order": "~65 NSM primes (+ semantic molecules as tags, not replacement lexicon)",
+      "must_not_replace": [
+        "layer_b_corpus_anchor",
+        "master_codebook_lexicon_41k"
+      ],
+      "implementation_status": "partial",
+      "scripts": [
+        "scripts/run_nsm_41k_lexicon_crosswalk_audit_v1.py",
+        "scripts/build_nsm_41k_crosswalk_500_fixture_v1.py",
+        "scripts/run_deepnsm_shadow_explication_chain_v1.py",
+        "scripts/run_deepnsm_shadow_distortion_chain_v1.py",
+        "scripts/run_deepnsm_hf_explication_chain_v1.py",
+        "scripts/build_ollama_shallow_routing_oracle_gap_v1.py"
+      ]
+    },
+    "layer_b": {
+      "role": "Corpus Anchor Matrix — 41k surface lookup, lemma/OSI/theographic/gematria sidecars, concept_bridge paths",
+      "size_order": "~41k rows + graph sidecars",
+      "must_not_replace": [],
+      "implementation_status": "production_rail",
+      "scripts": [
+        "scripts/run_logos_subgraph_graphrag_router_v1.py",
+        "scripts/run_logos_subgraph_gold_eval_v1.py",
+        "scripts/core/master_codebook_lexicon_v1_bridge.py"
+      ]
+    },
+    "layer_c": {
+      "role": "MDL Lexicon Pruner — Morfessor EM+Prune-class surface redundancy removal; must_keep rows exempt",
+      "size_order": "target 5–15% row reduction first pass",
+      "must_not_replace": [
+        "layer_b_semantic_anchors",
+        "strong_g_h_linked_must_keep"
+      ],
+      "implementation_status": "poc",
+      "scripts": [
+        "scripts/run_universal_root_mdl_prune_poc_v1.py",
+        "scripts/check_universal_root_mdl_prune_gate_v1.py"
+      ]
+    }
+  },
+  "metric_planes": {
+    "compress": {
+      "scope": "Golden-40 offline compress bench — raw metric only; repair_v2 not promotion proof",
+      "primary_metrics": [
+        "saving_pct",
+        "reconstruction_jaccard"
+      ],
+      "script": "scripts/comp_atom02_lexicon_must_keep_analysis_v1.py",
+      "never_collapse_with": [
+        "retrieve_hit_at_k",
+        "distortion_rate"
+      ]
+    },
+    "retrieve": {
+      "scope": "Logos subgraph gold fixture — CPU eval, B-track, non_gating",
+      "primary_metrics": [
+        "hit_at_1",
+        "hit_at_3",
+        "hit_at_8",
+        "gold_required_all_pass"
+      ],
+      "script": "scripts/run_logos_subgraph_gold_eval_v1.py",
+      "never_collapse_with": [
+        "compress_jaccard",
+        "nsm_prime_hit"
+      ]
+    },
+    "route": {
+      "scope": "Shallow Ollama domain fixtures — routing_oracle_gap on expected vs parsed domain_tag",
+      "primary_metrics": [
+        "routing_oracle_gap"
+      ],
+      "script": "scripts/build_ollama_shallow_routing_oracle_gap_v1.py",
+      "never_collapse_with": [
+        "retrieve_hit_at_k"
+      ]
+    },
+    "distortion": {
+      "scope": "NSM↔41k crosswalk existence-only audit — english_only_distortion is primary KPI for Layer A↔B",
+      "primary_metrics": [
+        "prime_hit_rate",
+        "english_only_distortion_rate",
+        "negative_control_leak_count"
+      ],
+      "script": "scripts/run_nsm_41k_lexicon_crosswalk_audit_v1.py",
+      "never_collapse_with": [
+        "hit_at_k"
+      ]
+    },
+    "cost": {
+      "scope": "Shallow preprocess only — cloud_skip_ratio; not OS-wide API cost claim",
+      "primary_metrics": [
+        "cloud_skip_ratio"
+      ],
+      "script": "scripts/run_ollama_shallow_router_bench_v1.py",
+      "never_collapse_with": [
+        "longmemeval_accuracy",
+        "vector_db_latency"
+      ]
+    },
+    "topology": {
+      "scope": "NSM prime probes → 31k verse atom graph reachability; separate from 41k lexicon distortion plane",
+      "primary_metrics": [
+        "verse_reachable_rate",
+        "lexicon_only_without_topology_rate",
+        "negative_topology_leak_count"
+      ],
+      "script": "scripts/build_universal_root_topology_crosswalk_v1.py",
+      "never_collapse_with": [
+        "prime_hit_rate",
+        "hit_at_k",
+        "compress_jaccard"
+      ]
+    }
+  },
+  "promotion_gates": {
+    "research_ready_decision": "HOLD",
+    "planes": {
+      "distortion": {
+        "enabled": true,
+        "thresholds": {
+          "fixture_pair_count_min": 500,
+          "min_prime_hit_rate": 0.15,
+          "max_english_only_distortion_rate": 0.6,
+          "max_negative_control_leaks": 2
+        },
+        "notes": "Layer A audit uses DeepNSM shadow remapping (gematria lemma script → 41k Unicode forms). Raw latin: distortion 0.8061; shadow remapped: distortion 0.014; gate_ok=True."
+      },
+      "retrieve": {
+        "enabled": true,
+        "thresholds": {
+          "min_gold_items": 24,
+          "min_hit_at_1": 0.95,
+          "min_hit_at_3": 0.95,
+          "min_hit_at_8": 0.98,
+          "gold_required_all_pass": true
+        },
+        "notes": "Logos gold only; not universal lexicon proof."
+      },
+      "route": {
+        "enabled": true,
+        "thresholds": {
+          "max_routing_oracle_gap": 0.0
+        },
+        "notes": "Shallow fixture scope; 16 golden in-domain default."
+      },
+      "cost": {
+        "enabled": true,
+        "thresholds": {
+          "min_cloud_skip_ratio": 0.95,
+          "min_deep_routing_recall": 0.95
+        },
+        "notes": "Shallow cost deep bench (golden16 + combined32). combined32 cloud_skip_ratio=1.0; deep_routing_recall=1.0; not OS-wide API cost claim."
+      },
+      "compress": {
+        "enabled": true,
+        "thresholds": {
+          "min_golden40_jaccard": 0.885,
+          "min_golden40_saving_pct": 46.5
+        },
+        "notes": "Golden-40 V2 — gate uses active_report_parity (frozen Track A run_config). parity saving=0.47116736990154706; jaccard=0.8893218363593751; strict_lexicon_on saving=0.45991561181434604; would_pass=True."
+      },
+      "layer_c_mdl": {
+        "enabled": true,
+        "thresholds": {
+          "min_row_reduction_pct": 5.0,
+          "max_row_reduction_pct": 15.0,
+          "min_jaccard_delta_pp": 0.0
+        },
+        "notes": "Morfessor-class PoC gate_ok=true (Phase 11-D/11-P). best_reduction=14.9995%; jaccard_delta_pp=0.0."
+      },
+      "topology": {
+        "enabled": true,
+        "thresholds": {
+          "fixture_pair_count_min": 500,
+          "min_verse_reachable_rate": 0.5,
+          "max_lexicon_only_without_topology_rate": 0.02
+        },
+        "notes": "Phase16 41k↔31k metric plane separation. verse_reachable=0.9953; prime_hit=0.9953; lexicon_only_without_topology_rate=0.0047; gate_ok=True."
+      }
+    }
+  },
+  "baseline_observed": {
+    "phase": "17",
+    "observed_at_utc": "2026-06-21T09:40:09Z",
+    "distortion_raw_latin": {
+      "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+      "audit_mode": "raw_latin",
+      "pair_count": 500,
+      "prime_hit_rate": 0.0701,
+      "english_only_distortion_rate": 0.8061,
+      "negative_control_leak_count": 1,
+      "gate_ok": false,
+      "report": "reports/nsm_41k_lexicon_crosswalk_audit_raw_v1_latest.json"
+    },
+    "distortion_shadow_remapped": {
+      "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+      "audit_mode": "deepnsm_shadow",
+      "explication_sidecar": "docs/final/artifacts/deepnsm_shadow_explication_v1.jsonl",
+      "pair_count": 500,
+      "prime_hit_rate": 0.979,
+      "english_only_distortion_rate": 0.014,
+      "negative_control_leak_count": 1,
+      "gate_ok": true,
+      "report": "reports/nsm_41k_lexicon_crosswalk_audit_v1_latest.json"
+    },
+    "distortion_delta_shadow_minus_raw": {
+      "prime_hit_rate_delta": 0.9089,
+      "distortion_rate_delta": -0.7921
+    },
+    "retrieve": {
+      "fixture": "docs/final/fixtures/logos_gold_query_eval_v1.json",
+      "items_evaluated": 48,
+      "hit_at_k_rates": {
+        "1": 1.0,
+        "3": 1.0,
+        "8": 1.0
+      },
+      "gold_required_all_pass": true,
+      "router_version": "2.0.2",
+      "known_miss_resolved": [
+        "q31"
+      ]
+    },
+    "route": {
+      "report": "reports/ollama_shallow_routing_oracle_gap_v1_latest.json",
+      "routing_oracle_gap": 0.0,
+      "router_hit_rate": 1.0
+    },
+    "route_stress_live_32": {
+      "report": "reports/ollama_shallow_oracle_gap_stress_v1_latest.json",
+      "fixture": "tests/fixtures/ollama_shallow_router_golden_combined_stress_v1.json",
+      "bench_report": "reports/ollama_shallow_router_bench_stress_v1_latest.json",
+      "modelfile": "docs/final/artifacts/ollama_mkm_shallow_router_modelfile_v1.txt",
+      "modelfile_version": "v1.3",
+      "router_hit_rate": 1.0,
+      "routing_oracle_gap": 0.0,
+      "cloud_skip_ratio": 1.0,
+      "deep_routing_recall": 1.0
+    },
+    "layer_c_mdl": {
+      "status": "poc_complete",
+      "report": "reports/universal_root_mdl_prune_poc_v1_latest.json",
+      "baseline_jaccard": 0.9021614722137169,
+      "any_sweep_pass": true,
+      "best_actual_reduction_pct": 14.9995,
+      "best_jaccard_delta_pp": 0.0
+    },
+    "compress_golden40": {
+      "status": "observed",
+      "report": "reports/constitution/btrack_pilot/comp_atom02_lexicon_must_keep_analysis_v1.json",
+      "gate_profile": "active_report_parity",
+      "strict_lexicon_on": {
+        "global_token_saving_rate": 0.45991561181434604,
+        "avg_reconstruction_fidelity_jaccard": 0.9021614722137169,
+        "avg_sensitive_integrity": 1.0
+      },
+      "lexicon_off": {
+        "global_token_saving_rate": 0.4978902953586498,
+        "avg_reconstruction_fidelity_jaccard": 0.8667325506450894,
+        "avg_sensitive_integrity": 1.0
+      },
+      "active_report_parity": {
+        "profile": "multilens_ultra_active_report_run_config",
+        "active_report_pointer": "docs/final/artifacts/MULTILENS_ULTRA_COMPRESSION_ACTIVE_REPORT_V1.json",
+        "global_token_saving_rate": 0.47116736990154706,
+        "avg_reconstruction_fidelity_jaccard": 0.8893218363593751,
+        "avg_sensitive_integrity": 1.0,
+        "disk_active_report_saving_rate": 0.47116736990154706,
+        "live_minus_disk_saving_delta": 0.0
+      },
+      "gate_metrics": {
+        "profile": "multilens_ultra_active_report_run_config",
+        "active_report_pointer": "docs/final/artifacts/MULTILENS_ULTRA_COMPRESSION_ACTIVE_REPORT_V1.json",
+        "global_token_saving_rate": 0.47116736990154706,
+        "avg_reconstruction_fidelity_jaccard": 0.8893218363593751,
+        "avg_sensitive_integrity": 1.0,
+        "disk_active_report_saving_rate": 0.47116736990154706,
+        "live_minus_disk_saving_delta": 0.0
+      },
+      "delta_on_minus_off": {
+        "global_token_saving_rate": -0.03797468354430378,
+        "avg_reconstruction_fidelity_jaccard": 0.035428921568627536
+      },
+      "gate_threshold_saving_pct": 46.5,
+      "gate_threshold_jaccard": 0.885,
+      "compress_plane_would_pass": true
+    },
+    "deepnsm_hf_ab": {
+      "ab_status": "paired_ollama_500",
+      "comparison_ready": true,
+      "implementation_status": "ollama_local_weights_v1",
+      "ollama_pilot_ok": true,
+      "delta_hf_minus_gematria": {
+        "prime_hit_rate_hf_minus_gematria": 0.0023,
+        "english_only_distortion_rate_hf_minus_gematria": -0.0023
+      },
+      "report": "reports/deepnsm_hf_ab_research_stub_v1_latest.json",
+      "chain_report": "reports/deepnsm_hf_explication_ollama_chain_v1_latest.json"
+    },
+    "cost_deep_bench": {
+      "deep_bench_ok": true,
+      "golden16": {
+        "router_hit_rate": 1.0,
+        "routing_oracle_gap": 0.0,
+        "cloud_skip_ratio": 1.0,
+        "deep_routing_recall": 1.0,
+        "rows": 16
+      },
+      "combined32": {
+        "router_hit_rate": 1.0,
+        "routing_oracle_gap": 0.0,
+        "cloud_skip_ratio": 1.0,
+        "deep_routing_recall": 1.0,
+        "rows": 32
+      },
+      "delta_combined32_minus_golden16": {
+        "router_hit_rate_combined32_minus_golden16": 0.0,
+        "routing_oracle_gap_combined32_minus_golden16": 0.0,
+        "cloud_skip_ratio_combined32_minus_golden16": 0.0,
+        "deep_routing_recall_combined32_minus_golden16": 0.0
+      },
+      "report": "reports/ollama_shallow_cost_deep_bench_v1_latest.json"
+    },
+    "layer_stack_closure": {
+      "closure_ok": true,
+      "report": "docs/final/artifacts/universal_root_layer_stack_closure_v1_latest.json",
+      "enabled_plane_count": 6
+    },
+    "phase12_live_public": {
+      "live_bundle_ok": true,
+      "jemaai_core_ok": true,
+      "showroom_smoke_ok": true,
+      "live_bundle_report": "reports/logos_phase12_live_bundle_v1_latest.json",
+      "showroom_smoke_report": "reports/showroom_trust_viz_public_chain_smoke_latest.json"
+    },
+    "phase13_deepnsm_hf_ollama": {
+      "implementation_status": "ollama_local_weights_v1",
+      "pilot_ok": true,
+      "pair_count": 500,
+      "ollama_model": "gemma4:e2b",
+      "hf_audit": {
+        "prime_hit_rate": 0.9813,
+        "english_only_distortion_rate": 0.0117,
+        "gap_count": 3,
+        "gate_ok": true
+      },
+      "delta_hf_minus_gematria": {
+        "prime_hit_rate_hf_minus_gematria": 0.0023,
+        "english_only_distortion_rate_hf_minus_gematria": -0.0023
+      },
+      "chain_report": "reports/deepnsm_hf_explication_ollama_chain_v1_latest.json",
+      "sidecar": "docs/final/artifacts/deepnsm_hf_explication_ollama_v1.jsonl"
+    },
+    "phase14_deepnsm_hf_ollama_500": {
+      "implementation_status": "ollama_local_weights_v1",
+      "full_audit_ok": true,
+      "pair_count": 500,
+      "ollama_model": "gemma4:e2b",
+      "hf_audit": {
+        "prime_hit_rate": 0.9813,
+        "english_only_distortion_rate": 0.0117,
+        "gap_count": 3,
+        "gate_ok": true
+      },
+      "delta_hf_minus_gematria": {
+        "prime_hit_rate_hf_minus_gematria": 0.0023,
+        "english_only_distortion_rate_hf_minus_gematria": -0.0023
+      },
+      "chain_report": "reports/deepnsm_hf_explication_ollama_500_chain_v1_latest.json",
+      "sidecar": "docs/final/artifacts/deepnsm_hf_explication_ollama_500_v1.jsonl",
+      "stub_vs_ollama_ab": "reports/deepnsm_hf_stub_vs_ollama_500_ab_v1_latest.json"
+    },
+    "phase15_deepnsm_hf_checkpoint": {
+      "implementation_status": "deepnsm_hf_checkpoint_v1",
+      "pilot_ok": true,
+      "pair_count": 500,
+      "checkpoint_model": "baartmar/DeepNSM-1B",
+      "base_model": "meta-llama/Llama-3.2-1B",
+      "hf_audit": {
+        "prime_hit_rate": 0.9953,
+        "english_only_distortion_rate": 0.0047,
+        "gap_count": 0,
+        "gate_ok": true
+      },
+      "delta_hf_minus_gematria": {
+        "prime_hit_rate_hf_minus_gematria": 0.0163,
+        "english_only_distortion_rate_hf_minus_gematria": -0.0093
+      },
+      "chain_report": "reports/deepnsm_hf_explication_checkpoint_chain_v1_latest.json",
+      "sidecar": "docs/final/artifacts/deepnsm_hf_explication_checkpoint_v1.jsonl",
+      "ollama_vs_checkpoint_ab": "reports/deepnsm_hf_ollama_vs_checkpoint_ab_v1_latest.json"
+    },
+    "phase16_topology_crosswalk": {
+      "implementation_status": "topology_crosswalk_v1",
+      "topology_ok": true,
+      "pair_count": 500,
+      "lexicon_plane": {
+        "plane": "lexicon_41k",
+        "pair_count": 500,
+        "non_control_pairs": 428,
+        "negative_control_pairs": 72,
+        "prime_hit_rate": 0.9953,
+        "english_only_distortion_rate": 0.0047,
+        "negative_control_leak_count": 1,
+        "audit_mode": "deepnsm_shadow",
+        "audit_pointer": "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json"
+      },
+      "topology_plane": {
+        "plane": "topology_31k",
+        "pair_count": 500,
+        "non_control_pairs": 428,
+        "negative_control_pairs": 72,
+        "verse_reachable_rate": 0.9953,
+        "negative_topology_leak_count": 0,
+        "corpus_verse_nodes": 31102,
+        "corpus_atom_nodes": 32082
+      },
+      "wall_divergence": {
+        "both_planes_hit": 426,
+        "lexicon_only_without_topology": 2,
+        "topology_only_without_lexicon": 0,
+        "gap_both_planes": 0,
+        "lexicon_only_without_topology_rate": 0.0047,
+        "plane_separation_reported": true,
+        "collapsed_combined_score": null
+      },
+      "delta_topology_minus_lexicon": {
+        "verse_reachable_minus_prime_hit_rate": 0.0
+      },
+      "spec": "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
+      "crosswalk_report": "reports/universal_root_topology_crosswalk_v1_latest.json",
+      "gate_report": "reports/universal_root_topology_crosswalk_gate_v1_latest.json",
+      "chain_report": "reports/logos_graphrag_phase16_topology_crosswalk_chain_v1_latest.json"
+    },
+    "phase17_closure_observability": {
+      "implementation_status": "closure_observability_v1",
+      "closure_ok": true,
+      "wall_exception_count": 2,
+      "wall_cards": "docs/final/artifacts/UNIVERSAL_ROOT_WALL_DIVERGENCE_EXCEPTION_CARDS_V1.json",
+      "bridge_query_id": "phase16_topology_crosswalk_bridge",
+      "observability_chain_pass": true,
+      "chain_report": "reports/logos_graphrag_phase17_closure_observability_chain_v1_latest.json"
+    },
+    "distortion": {
+      "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+      "audit_mode": "deepnsm_shadow",
+      "pair_count": 500,
+      "prime_hit_rate": 0.979,
+      "english_only_distortion_rate": 0.014,
+      "negative_control_leak_count": 1,
+      "gate_ok": true,
+      "report": "reports/nsm_41k_lexicon_crosswalk_audit_v1_latest.json"
+    }
+  },
+  "forbidden_claims": [
+    "41k replaced by 65 NSM primes",
+    "perfect orthogonality or column-disjoint semantic matrix in natural language",
+    "Hit@k on Logos gold equals universal lexicon readiness",
+    "cloud_skip_ratio 1.0 equals zero API cost OS-wide",
+    "DeepNSM explication proves theology routing or Track A promotion",
+    "LongMemEval or Mem0/Letta benchmark tables without MKM reproduce artifact",
+    "MKM Technical Specification v4 on disk without committed path",
+    "Wanda/SparseGPT applied to lexicon token rows (LLM weight pruning category error)",
+    "Layer A/B/C spec auto-promotes Track A or live trading",
+    "verse_reachable_rate replaces 41k lexicon prime_hit for Track A promotion",
+    "41k lexicon hit proves Logos subgraph hit_at_k readiness",
+    "collapsed topology_lexicon_combined_score used as promotion KPI"
+  ],
+  "domain_matrix": [
+    {
+      "domain_tag": "logos",
+      "layer_a": "NSM primes: KNOW, GOOD, BAD, SAY; domain_tag logos",
+      "layer_b": "41k G/H + lemma graph",
+      "sidecar": "Gnosis, OSI, theographic, gematria, concept_bridge",
+      "status": "production_rail"
+    },
+    {
+      "domain_tag": "clinical",
+      "layer_a": "NSM primes: BODY, FEEL; domain_tag clinical",
+      "layer_b": "hangul overlay 41676 [HYPO]",
+      "sidecar": "patient_track_b memory",
+      "status": "needs_experiment"
+    },
+    {
+      "domain_tag": "infra",
+      "layer_a": "NSM primes: DO, HAPPEN; domain_tag infra/devops",
+      "layer_b": "ops pins + log token aliases",
+      "sidecar": "shallow router fixtures",
+      "status": "partial"
+    },
+    {
+      "domain_tag": "legal",
+      "layer_a": "NSM primes: SAY, WANT, NOT; domain_tag legal",
+      "layer_b": "extension overlay (future)",
+      "sidecar": "needs_experiment",
+      "status": "needs_experiment"
+    }
+  ],
+  "artifact_pointers": {
+    "nsm_crosswalk_fixture_500": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+    "nsm_audit_latest": "reports/nsm_41k_lexicon_crosswalk_audit_v1_latest.json",
+    "logos_gold_fixture": "docs/final/fixtures/logos_gold_query_eval_v1.json",
+    "logos_gold_eval_latest": "reports/logos_subgraph_gold_eval_v1_latest.json",
+    "shallow_oracle_gap_latest": "reports/ollama_shallow_routing_oracle_gap_v1_latest.json",
+    "phase11a_chain_latest": "reports/logos_graphrag_phase11a_chain_v1_latest.json",
+    "gemini_raw_filtered": "docs/research/raw/universal_root_lexicon_matrix_gemini_report_2026-06-21.md",
+    "mdl_prune_poc_latest": "reports/universal_root_mdl_prune_poc_v1_latest.json",
+    "mdl_prune_gate_latest": "reports/universal_root_mdl_prune_gate_v1_latest.json",
+    "phase11c_chain_latest": "reports/logos_graphrag_phase11c_chain_v1_latest.json",
+    "phase11d_chain_latest": "reports/logos_graphrag_phase11d_mdl_prune_chain_v1_latest.json",
+    "deepnsm_shadow_sidecar": "docs/final/artifacts/deepnsm_shadow_explication_v1.jsonl",
+    "deepnsm_shadow_chain_latest": "reports/deepnsm_shadow_distortion_chain_v1_latest.json",
+    "nsm_audit_raw_latest": "reports/nsm_41k_lexicon_crosswalk_audit_raw_v1_latest.json",
+    "phase11e_chain_latest": "reports/logos_graphrag_phase11e_nsm_crosswalk_repair_chain_v1_latest.json",
+    "sidecar_ablation_v2_latest": "reports/logos_subgraph_sidecar_ablation_v2_latest.json",
+    "phase11f_chain_latest": "reports/logos_graphrag_phase11f_chain_v1_latest.json",
+    "shallow_stress_gap_latest": "reports/ollama_shallow_oracle_gap_stress_v1_latest.json",
+    "shallow_stress_bench_latest": "reports/ollama_shallow_router_bench_stress_v1_latest.json",
+    "phase11g_chain_latest": "reports/logos_graphrag_phase11g_shallow_stress_chain_v1_latest.json",
+    "phase11i_chain_latest": "reports/logos_graphrag_phase11i_shallow_modelfile_tune_chain_v1_latest.json",
+    "shallow_router_modelfile": "docs/final/artifacts/ollama_mkm_shallow_router_modelfile_v1.txt",
+    "sidecar_ablation_v3_latest": "reports/universal_root_sidecar_ablation_v3_latest.json",
+    "phase11k_chain_latest": "reports/logos_graphrag_phase11k_sidecar_ablation_v3_chain_v1_latest.json",
+    "phase11l_chain_latest": "reports/logos_graphrag_phase11l_closure_refresh_chain_v1_latest.json",
+    "phase11m_chain_latest": "reports/logos_graphrag_phase11m_research_impl_bridge_chain_v1_latest.json",
+    "universal_root_research_impl_bridge": "docs/final/artifacts/universal_root_research_impl_bridge_v1_latest.json",
+    "comp_atom02_latest": "reports/constitution/btrack_pilot/comp_atom02_lexicon_must_keep_analysis_v1.json",
+    "phase11p_chain_latest": "reports/logos_graphrag_phase11p_compress_layerc_gate_chain_v1_latest.json",
+    "phase11q_chain_latest": "reports/logos_graphrag_phase11q_compress_parity_chain_v1_latest.json",
+    "phase11r_chain_latest": "reports/logos_graphrag_phase11r_cost_deepnsm_stub_chain_v1_latest.json",
+    "deepnsm_hf_ab_stub_latest": "reports/deepnsm_hf_ab_research_stub_v1_latest.json",
+    "phase11s_chain_latest": "reports/logos_graphrag_phase11s_evidence_nl_sync_chain_v1_latest.json",
+    "deepnsm_hf_explication_chain_latest": "reports/deepnsm_hf_explication_chain_v1_latest.json",
+    "phase11t_chain_latest": "reports/logos_graphrag_phase11t_cost_deep_bench_chain_v1_latest.json",
+    "cost_deep_bench_latest": "reports/ollama_shallow_cost_deep_bench_v1_latest.json",
+    "shallow_gap_golden16_latest": "reports/ollama_shallow_routing_oracle_gap_golden16_v1_latest.json",
+    "phase12_chain_latest": "reports/logos_graphrag_phase12_live_public_chain_v1_latest.json",
+    "phase12_live_bundle_latest": "reports/logos_phase12_live_bundle_v1_latest.json",
+    "showroom_trust_viz_smoke_latest": "reports/showroom_trust_viz_public_chain_smoke_latest.json",
+    "layer_stack_closure": "docs/final/artifacts/universal_root_layer_stack_closure_v1_latest.json",
+    "phase11u_chain_latest": "reports/logos_graphrag_phase11u_deepnsm_hf_ollama_chain_v1_latest.json",
+    "deepnsm_hf_ollama_chain_latest": "reports/deepnsm_hf_explication_ollama_chain_v1_latest.json",
+    "phase13_chain_latest": "reports/logos_graphrag_phase13_deepnsm_hf_ollama_chain_v1_latest.json",
+    "deepnsm_hf_ollama_sidecar": "docs/final/artifacts/deepnsm_hf_explication_ollama_v1.jsonl",
+    "phase14_chain_latest": "reports/logos_graphrag_phase14_deepnsm_hf_ollama_500_chain_v1_latest.json",
+    "deepnsm_hf_ollama_500_chain_latest": "reports/deepnsm_hf_explication_ollama_500_chain_v1_latest.json",
+    "deepnsm_hf_ollama_500_sidecar": "docs/final/artifacts/deepnsm_hf_explication_ollama_500_v1.jsonl",
+    "stub_vs_ollama_500_ab_latest": "reports/deepnsm_hf_stub_vs_ollama_500_ab_v1_latest.json",
+    "topology_crosswalk_latest": "reports/universal_root_topology_crosswalk_v1_latest.json",
+    "topology_crosswalk_gate_latest": "reports/universal_root_topology_crosswalk_gate_v1_latest.json",
+    "phase16_chain_latest": "reports/logos_graphrag_phase16_topology_crosswalk_chain_v1_latest.json",
+    "topology_crosswalk_spec": "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
+    "phase17_chain_latest": "reports/logos_graphrag_phase17_closure_observability_chain_v1_latest.json",
+    "wall_divergence_exception_cards": "docs/final/artifacts/UNIVERSAL_ROOT_WALL_DIVERGENCE_EXCEPTION_CARDS_V1.json"
+  },
+  "reproduce": {
+    "validate_spec": "py scripts/check_universal_root_gate_spec_v1.py",
+    "phase11a_chain": "py scripts/run_logos_graphrag_phase11a_chain_v1.py",
+    "phase11b_chain": "py scripts/run_logos_graphrag_phase11b_chain_v1.py",
+    "phase11c_nsm_wire": "py scripts/run_p3_root_nsm_wire_chain_v1.py",
+    "nsm_500_audit": "py scripts/run_nsm_41k_lexicon_crosswalk_audit_v1.py --expected-pairs 500",
+    "logos_gold_eval": "py scripts/run_logos_subgraph_gold_eval_v1.py",
+    "mdl_prune_poc": "py scripts/run_universal_root_mdl_prune_poc_v1.py",
+    "phase11d_chain": "py scripts/run_logos_graphrag_phase11d_mdl_prune_chain_v1.py",
+    "deepnsm_shadow_chain": "py scripts/run_deepnsm_shadow_distortion_chain_v1.py",
+    "phase11e_chain": "py scripts/run_logos_graphrag_phase11e_nsm_crosswalk_repair_chain_v1.py",
+    "phase11f_chain": "py scripts/run_logos_graphrag_phase11f_chain_v1.py",
+    "phase11g_chain": "py scripts/run_logos_graphrag_phase11g_shallow_stress_chain_v1.py",
+    "phase11i_chain": "py scripts/run_logos_graphrag_phase11i_shallow_modelfile_tune_chain_v1.py",
+    "phase11k_chain": "py scripts/run_logos_graphrag_phase11k_sidecar_ablation_v3_chain_v1.py",
+    "sidecar_ablation_v3": "py scripts/run_universal_root_sidecar_ablation_v3_chain_v1.py",
+    "phase11l_chain": "py scripts/run_logos_graphrag_phase11l_closure_refresh_chain_v1.py",
+    "phase11m_chain": "py scripts/run_logos_graphrag_phase11m_research_impl_bridge_chain_v1.py",
+    "phase11p_chain": "py scripts/run_logos_graphrag_phase11p_compress_layerc_gate_chain_v1.py",
+    "comp_atom02": "py scripts/comp_atom02_lexicon_must_keep_analysis_v1.py",
+    "phase11q_chain": "py scripts/run_logos_graphrag_phase11q_compress_parity_chain_v1.py",
+    "phase11r_chain": "py scripts/run_logos_graphrag_phase11r_cost_deepnsm_stub_chain_v1.py",
+    "deepnsm_hf_ab_stub": "py scripts/build_deepnsm_hf_ab_research_stub_v1.py",
+    "phase11s_chain": "py scripts/run_logos_graphrag_phase11s_evidence_nl_sync_chain_v1.py",
+    "deepnsm_hf_explication_chain": "py scripts/run_deepnsm_hf_explication_chain_v1.py",
+    "phase11t_chain": "py scripts/run_logos_graphrag_phase11t_cost_deep_bench_chain_v1.py",
+    "cost_deep_bench": "py scripts/build_ollama_shallow_cost_deep_bench_v1.py",
+    "phase12_chain": "py scripts/run_logos_graphrag_phase12_live_public_chain_v1.py",
+    "phase12_live_bundle": "py scripts/build_logos_phase12_live_bundle_v1.py",
+    "showroom_public_smoke": "py scripts/check_showroom_trust_viz_public_chain_v1.py",
+    "phase11u_chain": "py scripts/run_logos_graphrag_phase11u_deepnsm_hf_ollama_chain_v1.py",
+    "phase13_chain": "py scripts/run_logos_graphrag_phase13_deepnsm_hf_ollama_chain_v1.py",
+    "phase14_chain": "py scripts/run_logos_graphrag_phase14_deepnsm_hf_ollama_500_chain_v1.py",
+    "stub_vs_ollama_500_ab": "py scripts/build_deepnsm_hf_stub_vs_ollama_500_ab_v1.py",
+    "phase15_chain": "py scripts/run_logos_graphrag_phase15_deepnsm_hf_checkpoint_chain_v1.py",
+    "ollama_vs_checkpoint_ab": "py scripts/build_deepnsm_hf_ollama_vs_checkpoint_ab_v1.py",
+    "checkpoint_prereqs": "py scripts/check_deepnsm_hf_checkpoint_prereqs_v1.py",
+    "phase16_chain": "py scripts/run_logos_graphrag_phase16_topology_crosswalk_chain_v1.py",
+    "topology_crosswalk_build": "py scripts/build_universal_root_topology_crosswalk_v1.py",
+    "topology_crosswalk_gate": "py scripts/check_universal_root_topology_crosswalk_v1.py",
+    "phase17_chain": "py scripts/run_logos_graphrag_phase17_closure_observability_chain_v1.py",
+    "wall_divergence_exception_cards": "py scripts/build_universal_root_wall_divergence_exception_cards_v1.py"
+  }
+}

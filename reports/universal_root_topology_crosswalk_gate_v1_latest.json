@@ -1,0 +1,44 @@
+{
+  "schema": "universal_root_topology_crosswalk_gate_v1",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "report_pointer": "reports/universal_root_topology_crosswalk_v1_latest.json",
+  "spec_pointer": "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
+  "gate_ok": true,
+  "checks": [
+    {
+      "name": "fixture_pair_count_min",
+      "ok": true,
+      "observed": 500,
+      "threshold": 500
+    },
+    {
+      "name": "min_verse_reachable_rate",
+      "ok": true,
+      "observed": 0.9953,
+      "threshold": 0.5
+    },
+    {
+      "name": "max_lexicon_only_without_topology_rate",
+      "ok": true,
+      "observed": 0.0047,
+      "threshold": 0.02
+    },
+    {
+      "name": "max_negative_topology_leak_count",
+      "ok": true,
+      "observed": 0,
+      "threshold": 0
+    },
+    {
+      "name": "require_plane_separation_report",
+      "ok": true,
+      "observed": {
+        "plane_separation_reported": true,
+        "collapsed_combined_score": null
+      },
+      "threshold": true
+    }
+  ],
+  "reproduce": "py scripts/check_universal_root_topology_crosswalk_v1.py"
+}

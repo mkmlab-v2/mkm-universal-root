@@ -1,0 +1,13 @@
+{
+  "schema": "hardcoded_workspace_paths_audit_v1",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-06-21T10:27:21Z",
+  "scope": "oss",
+  "files_scanned": 20,
+  "hit_count": 0,
+  "files_with_hits": 0,
+  "ok": true,
+  "hits": [],
+  "by_file": {},
+  "reproduce": "py scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict"
+}

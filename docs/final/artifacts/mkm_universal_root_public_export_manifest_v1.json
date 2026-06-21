@@ -1,0 +1,52 @@
+{
+  "schema": "mkm_universal_root_public_export_manifest_v1",
+  "version": "1.0.0",
+  "description": "Curated whitelist for public mkm-universal-root export — fixture smoke, no secrets, no full monorepo.",
+  "repo_target_name": "mkm-universal-root",
+  "entry_smoke": "scripts/run_universal_root_oss_cursor_smoke_v1.py",
+  "readme_ssot": "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md",
+  "pre_push_gate": [
+    "py scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict",
+    "py scripts/run_universal_root_oss_cursor_smoke_v1.py",
+    "py scripts/build_mkm_universal_root_public_export_bundle_v1.py --verify-only"
+  ],
+  "paths": [
+    "LICENSE",
+    "SECURITY.md",
+    "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md",
+    "docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json",
+    "docs/final/artifacts/mkm_solo_oss_release_policy_v1_latest.json",
+    "docs/final/artifacts/UNIVERSAL_ROOT_GATE_SPEC_V1.json",
+    "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
+    "docs/final/artifacts/logos_neuro_symbolic_b2b_public_one_pager_ko_v1.md",
+    "docs/final/artifacts/logos_neuro_symbolic_b2b_gtm_pointer_v1_latest.json",
+    "docs/final/schemas/universal_root_gate_spec_v1.schema.json",
+    "scripts/run_universal_root_oss_cursor_smoke_v1.py",
+    "scripts/check_hardcoded_workspace_paths_v1.py",
+    "scripts/normalize_workspace_paths_v1.py",
+    "scripts/build_universal_root_topology_crosswalk_v1.py",
+    "scripts/check_universal_root_topology_crosswalk_v1.py",
+    "scripts/build_universal_root_wall_divergence_exception_cards_v1.py",
+    "scripts/check_universal_root_gate_spec_v1.py",
+    "scripts/build_mkm_universal_root_public_export_bundle_v1.py",
+    "tests/test_universal_root_topology_crosswalk_v1.py",
+    "tests/test_universal_root_wall_divergence_exception_cards_v1.py",
+    "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+    "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json",
+    "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl"
+  ],
+  "deny_filename_patterns": [".env", "credentials", "dpapi", ".pem", ".key", "MISSION_LOG"],
+  "deny_path_substrings": [
+    "projects/bitcoin-trading",
+    "global_atom_full_canon",
+    "memory/v2",
+    "canon_singularity"
+  ],
+  "forbidden_hero_claims": [
+    "gpt4_replacement",
+    "fake_news_firewall",
+    "production_sla_accuracy",
+    "shorts_subtitle_in_hero",
+    "track_a_live_trading"
+  ]
+}

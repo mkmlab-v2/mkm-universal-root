@@ -1,0 +1,71 @@
+{
+  "schema": "universal_root_topology_crosswalk_spec_v1",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-06-21T12:00:00Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "hypothesis_class": "HYPO",
+  "track_a_promotion_forbidden": true,
+  "summary_ko": "41k lexicon plane과 31k verse-atom topology plane을 분리 보고한다. NSM prime crosswalk는 Layer B lookup(41k)과 Logos verse graph(31k)를 각각 측정하며 단일 합산 점수로 승격하지 않는다.",
+  "walls": {
+    "lexicon_plane_41k": {
+      "scope": "master_codebook_lexicon lookup — prime_hit / english_only_distortion",
+      "primary_metrics": [
+        "prime_hit_rate",
+        "english_only_distortion_rate"
+      ],
+      "must_not_substitute_for": [
+        "verse_reachable_rate",
+        "hit_at_k"
+      ]
+    },
+    "topology_plane_31k": {
+      "scope": "logos verse atom bidirectional graph — probe token → atom → verse reachability",
+      "primary_metrics": [
+        "verse_reachable_rate",
+        "lexicon_only_without_topology_rate"
+      ],
+      "must_not_substitute_for": [
+        "prime_hit_rate",
+        "compress_jaccard"
+      ],
+      "corpus_order": "~31102 verse nodes · ~28172 atom nodes"
+    },
+    "metric_plane_separation": {
+      "never_collapse_with": [
+        "prime_hit_rate",
+        "verse_reachable_rate",
+        "hit_at_k",
+        "routing_oracle_gap"
+      ],
+      "forbidden_combined_score_keys": [
+        "combined_lexicon_topology_score",
+        "universal_root_single_kpi"
+      ]
+    }
+  },
+  "inputs": {
+    "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+    "lexicon_audit_default": "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json",
+    "verse_atom_jsonl": "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl",
+    "bidirectional_anchor_index_optional": "reports/logos_bidirectional_anchor_index_v1_latest.json"
+  },
+  "thresholds": {
+    "fixture_pair_count_min": 500,
+    "min_verse_reachable_rate": 0.5,
+    "max_lexicon_only_without_topology_rate": 0.02,
+    "max_negative_topology_leak_count": 0,
+    "require_plane_separation_report": true
+  },
+  "forbidden_claims": [
+    "verse_reachable_rate replaces 41k lexicon prime_hit for Track A promotion",
+    "41k lexicon hit proves Logos subgraph hit_at_k readiness",
+    "collapsed topology_lexicon_combined_score used as promotion KPI",
+    "31k verse graph reachability auto-triggers theology routing or SEND"
+  ],
+  "reproduce": {
+    "build": "py scripts/build_universal_root_topology_crosswalk_v1.py",
+    "check": "py scripts/check_universal_root_topology_crosswalk_v1.py",
+    "chain": "py scripts/run_logos_graphrag_phase16_topology_crosswalk_chain_v1.py"
+  }
+}
