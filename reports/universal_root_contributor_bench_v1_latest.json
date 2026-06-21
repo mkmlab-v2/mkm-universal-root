@@ -1,0 +1,26 @@
+{
+  "schema": "universal_root_contributor_bench_v1",
+  "generated_at_utc": "2026-06-21T11:40:45Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "telemetry": false,
+  "shard": "tests/fixtures/contributions/pending/contributor_example_v1.json",
+  "sample_count": 3,
+  "validate_ok": true,
+  "validate_cmd": [
+    "C:\\Python311\\python.exe",
+    "C:\\workspace\\exports\\mkm-universal-root-v1\\scripts\\validate_universal_root_contributor_fixture_v1.py",
+    "--json",
+    "C:\\workspace\\exports\\mkm-universal-root-v1\\tests\\fixtures\\contributions\\pending\\contributor_example_v1.json",
+    "--min-rows",
+    "3",
+    "--max-rows",
+    "50"
+  ],
+  "validate_tail": "{\"validation_ok\": true, \"sample_count\": 3, \"issues\": 0}",
+  "canonical_overlap_primes": [],
+  "warnings": [],
+  "topology_crosswalk_on_shard": "not_run_v1_stub",
+  "ok": true,
+  "reproduce": "py scripts/run_universal_root_contributor_bench_v1.py --shard tests/fixtures/contributions/pending/contributor_example_v1.json"
+}

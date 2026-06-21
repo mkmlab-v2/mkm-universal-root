@@ -1,0 +1,19 @@
+{
+  "schema": "universal_root_contributor_fixture_validate_v1",
+  "generated_at_utc": "2026-06-21T11:40:45Z",
+  "input_json": "tests/fixtures/contributions/pending/contributor_example_v1.json",
+  "input_sha256": "60d754d600f99111a98355ad9d0a569c54b5fada9019728ed29e912f2418f2d7",
+  "shard_schema": "nsm_41k_lexicon_crosswalk_contrib_v1",
+  "sample_count": 3,
+  "validation_ok": true,
+  "research_only": true,
+  "send_gate": "HOLD",
+  "auto_track_a_promotion_allowed": false,
+  "telemetry": false,
+  "issue_count": 0,
+  "warn_count": 0,
+  "issues": [],
+  "issues_truncated": false,
+  "boundary_ack": "Contributor fixture shard is B-track PR evidence only; does not auto-train, upload corpora, or promote Track A.",
+  "reproduce": "py scripts/validate_universal_root_contributor_fixture_v1.py --json tests/fixtures/contributions/pending/contributor_example_v1.json"
+}

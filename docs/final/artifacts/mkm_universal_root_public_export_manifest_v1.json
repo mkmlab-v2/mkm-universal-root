@@ -1,12 +1,13 @@
 {
   "schema": "mkm_universal_root_public_export_manifest_v1",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Curated whitelist for public mkm-universal-root export — fixture smoke, optional contributor stubs, no secrets, no full monorepo.",
   "repo_target_name": "mkm-universal-root",
   "entry_smoke": "scripts/run_universal_root_oss_cursor_smoke_v1.py",
   "readme_ssot": "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md",
   "pre_push_gate": [
     "py scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict",
+    "py scripts/check_mkm_secret_patterns_v1.py",
     "py scripts/run_universal_root_oss_cursor_smoke_v1.py",
     "py -m pytest tests/test_universal_root_contributor_fixture_v1.py -q",
     "py scripts/build_mkm_universal_root_public_export_bundle_v1.py --verify-only"
@@ -20,11 +21,11 @@
     "docs/final/artifacts/mkm_solo_oss_release_policy_v1_latest.json",
     "docs/final/artifacts/UNIVERSAL_ROOT_GATE_SPEC_V1.json",
     "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
-    "docs/final/artifacts/logos_neuro_symbolic_b2b_public_one_pager_ko_v1.md",
-    "docs/final/artifacts/logos_neuro_symbolic_b2b_gtm_pointer_v1_latest.json",
+    "docs/final/artifacts/mkm_universal_root_public_gtm_pointer_v1.json",
     "docs/final/schemas/universal_root_gate_spec_v1.schema.json",
     "scripts/run_universal_root_oss_cursor_smoke_v1.py",
     "scripts/check_hardcoded_workspace_paths_v1.py",
+    "scripts/check_mkm_secret_patterns_v1.py",
     "scripts/normalize_workspace_paths_v1.py",
     "scripts/build_universal_root_topology_crosswalk_v1.py",
     "scripts/check_universal_root_topology_crosswalk_v1.py",

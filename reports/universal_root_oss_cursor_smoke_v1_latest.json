@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_oss_cursor_smoke_v1",
   "version": "1.1.0",
-  "generated_at_utc": "2026-06-21T10:27:32Z",
+  "generated_at_utc": "2026-06-21T11:45:13Z",
   "research_only": true,
   "send_gate": "HOLD",
   "hypothesis_class": "HYPO",
@@ -28,7 +28,7 @@
       ],
       "exit_code": 0,
       "ok": true,
-      "tail": "{\"ok\": true, \"scope\": \"oss\", \"hit_count\": 0, \"files_with_hits\": 0, \"out\": \"C:\\\\workspace\\\\exports\\\\mkm-universal-root-v1\\\\reports\\\\hardcoded_workspace_paths_audit_v1_latest.json\"}"
+      "tail": "{\"ok\": true, \"scope\": \"oss\", \"hit_count\": 0, \"files_with_hits\": 0, \"out\": \"C:\\\\workspace\\\\exports\\\\_push-mkm-universal-root\\\\reports\\\\hardcoded_workspace_paths_audit_v1_latest.json\"}"
     },
     {
       "label": "topology_crosswalk_build",
@@ -48,7 +48,7 @@
       ],
       "exit_code": 0,
       "ok": true,
-      "tail": "{\"ok\": true, \"out\": \"C:\\\\workspace\\\\exports\\\\mkm-universal-root-v1\\\\reports\\\\universal_root_topology_crosswalk_gate_v1_latest.json\"}"
+      "tail": "{\"ok\": true, \"out\": \"C:\\\\workspace\\\\exports\\\\_push-mkm-universal-root\\\\reports\\\\universal_root_topology_crosswalk_gate_v1_latest.json\"}"
     },
     {
       "label": "wall_divergence_cards",
@@ -58,7 +58,7 @@
       ],
       "exit_code": 0,
       "ok": true,
-      "tail": "{\"ok\": true, \"exception_count\": 2, \"out\": \"C:\\\\workspace\\\\exports\\\\mkm-universal-root-v1\\\\docs\\\\final\\\\artifacts\\\\UNIVERSAL_ROOT_WALL_DIVERGENCE_EXCEPTION_CARDS_V1.json\"}"
+      "tail": "{\"ok\": true, \"exception_count\": 2, \"out\": \"C:\\\\workspace\\\\exports\\\\_push-mkm-universal-root\\\\docs\\\\final\\\\artifacts\\\\UNIVERSAL_ROOT_WALL_DIVERGENCE_EXCEPTION_CARDS_V1.json\"}"
     },
     {
       "label": "gate_spec_check",
@@ -82,7 +82,7 @@
       ],
       "exit_code": 0,
       "ok": true,
-      "tail": "..                                                                       [100%]\n2 passed in 2.02s"
+      "tail": "..                                                                       [100%]\n2 passed in 1.67s"
     },
     {
       "label": "pytest_wall_divergence_cards",
@@ -96,7 +96,7 @@
       ],
       "exit_code": 0,
       "ok": true,
-      "tail": ".                                                                        [100%]\n1 passed in 0.36s"
+      "tail": ".                                                                        [100%]\n1 passed in 0.31s"
     }
   ],
   "reproduce": "py scripts/run_universal_root_oss_cursor_smoke_v1.py"

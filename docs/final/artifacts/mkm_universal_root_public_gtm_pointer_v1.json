@@ -1,0 +1,40 @@
+{
+  "schema": "mkm_universal_root_public_gtm_pointer_v1",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-06-21T12:30:00Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "github_url": "https://github.com/mkmlab-v2/mkm-universal-root",
+  "default_branch": "main",
+  "ci_workflow": ".github/workflows/oss-smoke.yml",
+  "entry_smoke": "scripts/run_universal_root_oss_cursor_smoke_v1.py",
+  "contributing": "CONTRIBUTING.md",
+  "security": "SECURITY.md",
+  "gate_spec": "docs/final/artifacts/UNIVERSAL_ROOT_GATE_SPEC_V1.json",
+  "topology_crosswalk_spec": "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
+  "wall_exception_cards": "docs/final/artifacts/UNIVERSAL_ROOT_WALL_DIVERGENCE_EXCEPTION_CARDS_V1.json",
+  "oss_release_policy": "docs/final/artifacts/mkm_solo_oss_release_policy_v1_latest.json",
+  "requires_hf_gate": false,
+  "requires_ollama": false,
+  "telemetry": false,
+  "raw_metrics_fixture_500_pair": {
+    "lexicon_prime_hit_rate": 0.9953,
+    "lexicon_english_only_distortion_rate": 0.0047,
+    "topology_verse_reachable_rate": 0.9953,
+    "wall_exception_count": 2,
+    "collapsed_combined_score": null
+  },
+  "reproduce": "python3 scripts/run_universal_root_oss_cursor_smoke_v1.py",
+  "public_showroom_urls": {
+    "integrity_orb": "https://api.jemaai.cloud/public_showroom_logos_integrity_orb_v1.html?product=1",
+    "research_shadow_lane": "https://api.jemaai.cloud/public_showroom_research_shadow_lane_v1.html"
+  },
+  "forbidden_public_claims": [
+    "gpt4_replacement",
+    "fake_news_firewall",
+    "production_sla_accuracy",
+    "global_hallucination_rate_from_fixture",
+    "data_flywheel_auto_training",
+    "track_a_live_trading"
+  ]
+}

@@ -16,6 +16,8 @@ jobs:
           python-version: "3.11"
       - name: Install minimal deps
         run: pip install -r requirements.txt
+      - name: Secret pattern scan (OSS subset)
+        run: python3 scripts/check_mkm_secret_patterns_v1.py
       - name: Launch Gate #1 — OSS path audit
         run: python3 scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict
       - name: Launch Gate #2 — fixture smoke
