@@ -1,0 +1,22 @@
+name: OSS smoke
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install minimal deps
+        run: pip install -r requirements.txt
+      - name: Launch Gate #1 — OSS path audit
+        run: python3 scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict
+      - name: Launch Gate #2 — fixture smoke
+        run: python3 scripts/run_universal_root_oss_cursor_smoke_v1.py
