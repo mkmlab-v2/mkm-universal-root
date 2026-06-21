@@ -1,23 +1,38 @@
 # mkm-universal-root
 
+![OSS smoke](https://github.com/mkmlab-v2/mkm-universal-root/actions/workflows/oss-smoke.yml/badge.svg)
+
 **Neuro-symbolic integrity kit for developers** — pre-built symbolic grids (lexicon + corpus topology) with optional local SLM paths. **Not** a hosted ingestion SaaS · **not** a GPT-4 replacement · **not** investment or medical advice.
 
 License: **MIT** — see [LICENSE](LICENSE)
 
 ---
 
-## Clone → 20 seconds → exit 0
-
-No Hugging Face token · no Ollama · no cloud API on the default smoke path.
+## Quickstart (3 commands)
 
 ```bash
-# from repo root after git clone (Windows: py instead of python3)
-python3 scripts/run_universal_root_oss_cursor_smoke_v1.py
+git clone https://github.com/mkmlab-v2/mkm-universal-root.git && cd mkm-universal-root
+pip install -r requirements.txt
+python3 scripts/run_universal_root_oss_cursor_smoke_v1.py   # ~20s · exit 0 · no API keys
 ```
 
-Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json`
+Windows: use `py` instead of `python3`. Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json`
 
-Launch Gate #1 (OSS path audit) runs inside the smoke unless you pass `--skip-path-audit`.
+---
+
+## Repository scope (Y1 public export)
+
+**What you see is what you can reproduce** on the default path: clone → install → ~20s smoke → `exit 0`.
+
+| In this repo | Not in this export |
+|--------------|-------------------|
+| Offline smoke runner (`scripts/run_universal_root_oss_cursor_smoke_v1.py`) | Hosted APIs, telemetry, or upload/ingestion |
+| **500-pair** fixture bench (`tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json`) | Full monorepo, compression KPI lane (~47.5%), live trading |
+| Topology crosswalk + gate scripts (see `docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json`) | KO shorts, clinical SOAP, auto-training on user docs |
+| Dual-plane **raw** metrics; `collapsed_combined_score: null` by design | Single headline “accuracy” or global hallucination claims |
+| Corpus **reference counts** (41k lexicon plane · 31,102 verse / 32,082 atom index labels) — not a warranty on open-world performance | Proprietary bulk dumps or unreleased B-track JSONL |
+
+`[HYPO]` · `research_only` · MIT · not production SLA · not investment or medical advice.
 
 ---
 
@@ -75,9 +90,14 @@ python3 scripts/run_universal_root_oss_cursor_smoke_v1.py
 
 ---
 
-## Related research (separate lane — not this smoke)
+## Related work (research lane — not OSS smoke KPI)
 
-Korean shorts STT timing experiments live under `scripts/run_ko_shorts_timing_compare_v1.py` in the full MKM monorepo — **not** part of `mkm-universal-root` export smoke.
+Broader **Neuro → Symbolic → Human** architecture context lives in the MKM monorepo (B-track `[HYPO]` · `send_gate: HOLD`):
+
+- **Merged synthesis (SSOT):** `docs/research/NEXT_GEN_HYBRID_AI_MKM_MERGED_LIT_REVIEW_2026-06-20.md` — Hybrid Memory / 4-Vault orchestration **roadmap only** (Y1b); not shipped in this export.
+- **Y1b direction:** on-prem orchestration OS — separate from this Y1 fixture smoke; do **not** merge with compression KPIs (~47.5% parallel enterprise lane) or MS headlines (FAIL-COMP-004).
+
+Other monorepo-only benches (e.g. KO shorts STT timing under `scripts/run_ko_shorts_timing_compare_v1.py`) are **not** part of `mkm-universal-root` export smoke.
 
 ---
 
@@ -91,3 +111,16 @@ python3 scripts/build_mkm_universal_root_public_export_bundle_v1.py --materializ
 Manifest: `docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json`
 
 Public push (monorepo): `scripts/Push-GitHub-Explicit.ps1 -Acknowledge` only after gates above exit 0.
+
+---
+
+## Contributing fixture shards (opt-in · no telemetry)
+
+**Not** auto-training or data upload — optional PRs of **synthetic** probe rows under human review.
+
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** · example: `tests/fixtures/contributions/pending/contributor_example_v1.json`
+
+```bash
+python3 scripts/validate_universal_root_contributor_fixture_v1.py \
+  --json tests/fixtures/contributions/pending/contributor_example_v1.json
+```
