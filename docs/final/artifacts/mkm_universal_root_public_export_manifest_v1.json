@@ -1,19 +1,21 @@
 {
   "schema": "mkm_universal_root_public_export_manifest_v1",
-  "version": "1.0.0",
-  "description": "Curated whitelist for public mkm-universal-root export — fixture smoke, no secrets, no full monorepo.",
+  "version": "1.1.0",
+  "description": "Curated whitelist for public mkm-universal-root export — fixture smoke, optional contributor stubs, no secrets, no full monorepo.",
   "repo_target_name": "mkm-universal-root",
   "entry_smoke": "scripts/run_universal_root_oss_cursor_smoke_v1.py",
   "readme_ssot": "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md",
   "pre_push_gate": [
     "py scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict",
     "py scripts/run_universal_root_oss_cursor_smoke_v1.py",
+    "py -m pytest tests/test_universal_root_contributor_fixture_v1.py -q",
     "py scripts/build_mkm_universal_root_public_export_bundle_v1.py --verify-only"
   ],
   "paths": [
     "LICENSE",
     "SECURITY.md",
     "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md",
+    "docs/final/artifacts/mkm_universal_root_contributing_en_v1.md",
     "docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json",
     "docs/final/artifacts/mkm_solo_oss_release_policy_v1_latest.json",
     "docs/final/artifacts/UNIVERSAL_ROOT_GATE_SPEC_V1.json",
@@ -29,11 +31,19 @@
     "scripts/build_universal_root_wall_divergence_exception_cards_v1.py",
     "scripts/check_universal_root_gate_spec_v1.py",
     "scripts/build_mkm_universal_root_public_export_bundle_v1.py",
+    "scripts/validate_universal_root_contributor_fixture_v1.py",
+    "scripts/run_universal_root_contributor_bench_v1.py",
+    "scripts/validate_wtt_pilot_jsonl_v1.py",
     "tests/test_universal_root_topology_crosswalk_v1.py",
     "tests/test_universal_root_wall_divergence_exception_cards_v1.py",
+    "tests/test_universal_root_contributor_fixture_v1.py",
     "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+    "tests/fixtures/contributions/README.md",
+    "tests/fixtures/contributions/universal_root_contributions_manifest_v1.json",
+    "tests/fixtures/contributions/pending/contributor_example_v1.json",
     "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json",
-    "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl"
+    "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl",
+    "docs/final/artifacts/mkm_universal_root_github_workflow_oss_smoke_v1.yml"
   ],
   "deny_filename_patterns": [".env", "credentials", "dpapi", ".pem", ".key", "MISSION_LOG"],
   "deny_path_substrings": [
@@ -47,6 +57,13 @@
     "fake_news_firewall",
     "production_sla_accuracy",
     "shorts_subtitle_in_hero",
-    "track_a_live_trading"
-  ]
+    "track_a_live_trading",
+    "data_flywheel_auto_training"
+  ],
+  "contributor_lane_v1": {
+    "public_export": true,
+    "telemetry": false,
+    "human_merge_required": true,
+    "contributing_ssot": "docs/final/artifacts/mkm_universal_root_contributing_en_v1.md"
+  }
 }
