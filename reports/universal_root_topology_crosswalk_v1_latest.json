@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_topology_crosswalk_v1",
   "version": "1.0.0",
-  "generated_at_utc": "2026-06-21T11:45:10Z",
+  "generated_at_utc": "2026-06-22T13:35:31Z",
   "research_only": true,
   "send_gate": "HOLD",
   "hypothesis_class": "HYPO",
@@ -25,8 +25,8 @@
     "negative_control_pairs": 72,
     "verse_reachable_rate": 0.9953,
     "negative_topology_leak_count": 0,
-    "corpus_verse_nodes": 31102,
-    "corpus_atom_nodes": 32082
+    "corpus_verse_nodes": 279,
+    "corpus_atom_nodes": 2311
   },
   "wall_divergence": {
     "both_planes_hit": 426,
@@ -3481,6 +3481,6 @@
   "inputs": {
     "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
     "spec": "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
-    "verse_jsonl": "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl"
+    "verse_jsonl": "tests/fixtures/logos_verse_4d_topology_stub_v1.jsonl"
   }
 }

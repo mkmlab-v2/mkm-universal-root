@@ -17,7 +17,7 @@ if str(ROOT) not in sys.path:
 DEFAULT_FIXTURE = ROOT / "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json"
 DEFAULT_SPEC = ROOT / "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json"
 DEFAULT_LEXICON_AUDIT = ROOT / "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json"
-DEFAULT_VERSE_JSONL = ROOT / "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl"
+DEFAULT_VERSE_JSONL = ROOT / "tests/fixtures/logos_verse_4d_topology_stub_v1.jsonl"
 DEFAULT_OUT = ROOT / "reports/universal_root_topology_crosswalk_v1_latest.json"
 
 

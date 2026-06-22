@@ -1,9 +1,9 @@
 {
   "schema": "hardcoded_workspace_paths_audit_v1",
   "version": "1.0.0",
-  "generated_at_utc": "2026-06-21T11:45:04Z",
+  "generated_at_utc": "2026-06-22T13:35:27Z",
   "scope": "oss",
-  "files_scanned": 21,
+  "files_scanned": 20,
   "hit_count": 0,
   "files_with_hits": 0,
   "ok": true,

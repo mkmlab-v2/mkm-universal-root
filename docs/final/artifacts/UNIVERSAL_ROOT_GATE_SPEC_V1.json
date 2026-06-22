@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_gate_spec_v1",
   "version": "1.1.0",
-  "generated_at_utc": "2026-06-21T09:40:09Z",
+  "generated_at_utc": "2026-06-22T09:55:01Z",
   "research_only": true,
   "send_gate": "HOLD",
   "hypothesis_class": "HYPO",
@@ -144,7 +144,7 @@
           "max_english_only_distortion_rate": 0.6,
           "max_negative_control_leaks": 2
         },
-        "notes": "Layer A audit uses DeepNSM shadow remapping (gematria lemma script → 41k Unicode forms). Raw latin: distortion 0.8061; shadow remapped: distortion 0.014; gate_ok=True."
+        "notes": "Layer A audit uses DeepNSM shadow remapping (gematria lemma script → 41k Unicode forms). Raw latin: distortion 0.8061; shadow remapped: distortion 0.8061; gate_ok=False."
       },
       "retrieve": {
         "enabled": true,
@@ -202,7 +202,7 @@
   },
   "baseline_observed": {
     "phase": "17",
-    "observed_at_utc": "2026-06-21T09:40:09Z",
+    "observed_at_utc": "2026-06-22T09:55:01Z",
     "distortion_raw_latin": {
       "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
       "audit_mode": "raw_latin",
@@ -215,13 +215,13 @@
     },
     "distortion_shadow_remapped": {
       "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
-      "audit_mode": "deepnsm_shadow",
-      "explication_sidecar": "docs/final/artifacts/deepnsm_shadow_explication_v1.jsonl",
+      "audit_mode": "raw_latin",
+      "explication_sidecar": null,
       "pair_count": 500,
-      "prime_hit_rate": 0.979,
-      "english_only_distortion_rate": 0.014,
+      "prime_hit_rate": 0.0701,
+      "english_only_distortion_rate": 0.8061,
       "negative_control_leak_count": 1,
-      "gate_ok": true,
+      "gate_ok": false,
       "report": "reports/nsm_41k_lexicon_crosswalk_audit_v1_latest.json"
     },
     "distortion_delta_shadow_minus_raw": {
@@ -464,12 +464,12 @@
     },
     "distortion": {
       "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
-      "audit_mode": "deepnsm_shadow",
+      "audit_mode": "raw_latin",
       "pair_count": 500,
-      "prime_hit_rate": 0.979,
-      "english_only_distortion_rate": 0.014,
+      "prime_hit_rate": 0.0701,
+      "english_only_distortion_rate": 0.8061,
       "negative_control_leak_count": 1,
-      "gate_ok": true,
+      "gate_ok": false,
       "report": "reports/nsm_41k_lexicon_crosswalk_audit_v1_latest.json"
     }
   },

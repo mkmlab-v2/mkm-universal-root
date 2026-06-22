@@ -47,7 +47,8 @@
   "inputs": {
     "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
     "lexicon_audit_default": "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json",
-    "verse_atom_jsonl": "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl",
+    "verse_atom_jsonl": "tests/fixtures/logos_verse_4d_topology_stub_v1.jsonl",
+    "verse_atom_jsonl_full_monorepo_private": "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl",
     "bidirectional_anchor_index_optional": "reports/logos_bidirectional_anchor_index_v1_latest.json"
   },
   "thresholds": {

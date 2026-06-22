@@ -114,6 +114,12 @@ Public push (monorepo): `scripts/Push-GitHub-Explicit.ps1 -Acknowledge` only aft
 
 ---
 
+## Sponsors
+
+GitHub Sponsors slot reserved for Y2+ maintenance — **not required** for Y1. Stars, issues, and **external smoke repro** on [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2) are the priority signal.
+
+---
+
 ## Contributing fixture shards (opt-in · no telemetry)
 
 **Not** auto-training or data upload — optional PRs of **synthetic** probe rows under human review.
@@ -124,3 +130,7 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** · example: `tests/fixtures/contribut
 python3 scripts/validate_universal_root_contributor_fixture_v1.py \
   --json tests/fixtures/contributions/pending/contributor_example_v1.json
 ```
+
+---
+
+**Fixture topology stub:** Default clone ships a **fixture-aligned** verse-atom JSONL stub (`tests/fixtures/logos_verse_4d_topology_stub_v1.jsonl`, &lt;1MB) for local reproducibility on the 500-pair bench. The full ~31k-node corpus dump stays in the monorepo private B-track lane; regenerate the stub with `py scripts/extract_fixture_aligned_topology_stub_v1.py` when the fixture or audit changes.

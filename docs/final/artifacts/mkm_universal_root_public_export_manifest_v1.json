@@ -28,6 +28,7 @@
     "scripts/check_mkm_secret_patterns_v1.py",
     "scripts/normalize_workspace_paths_v1.py",
     "scripts/build_universal_root_topology_crosswalk_v1.py",
+    "scripts/extract_fixture_aligned_topology_stub_v1.py",
     "scripts/check_universal_root_topology_crosswalk_v1.py",
     "scripts/build_universal_root_wall_divergence_exception_cards_v1.py",
     "scripts/check_universal_root_gate_spec_v1.py",
@@ -43,7 +44,7 @@
     "tests/fixtures/contributions/universal_root_contributions_manifest_v1.json",
     "tests/fixtures/contributions/pending/contributor_example_v1.json",
     "reports/nsm_41k_lexicon_crosswalk_audit_hf_checkpoint_v1_latest.json",
-    "reports/constitution/btrack_pilot/logos_verse_4d_v1_with_atoms_latest.jsonl",
+    "tests/fixtures/logos_verse_4d_topology_stub_v1.jsonl",
     "docs/final/artifacts/mkm_universal_root_github_workflow_oss_smoke_v1.yml"
   ],
   "deny_filename_patterns": [".env", "credentials", "dpapi", ".pem", ".key", "MISSION_LOG"],
