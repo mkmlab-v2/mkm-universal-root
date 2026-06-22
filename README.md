@@ -49,6 +49,28 @@ Metrics below are **raw**, on a **500-pair fixture** (`tests/fixtures/nsm_41k_le
 | Topology 31k | `verse_reachable_rate` | **99.53%** |
 | Walls | divergence exception cards | **2** (`heal`, `learn`) |
 
+### Phase 1A — baseline vs dual-plane (500-pair fixture)
+
+Compare methods on the same fixture (`428` non-control + `72` negative-control pairs). **Do not** publish the collapsed OR row (B4) as a single “accuracy” headline.
+
+| ID | Method | Metric | Raw value |
+|----|--------|--------|-----------|
+| B0 | English-only naive | `english_only_hit_rate` | **78.04%** |
+| B1 | Lexicon plane (41k) | `prime_hit_rate` | **99.53%** |
+| B2 | Topology plane (31k) | `verse_reachable_rate` | **99.53%** |
+| B3 | Dual-plane aligned (both hit) | `dual_plane_aligned_rate` | **99.53%** |
+| B4 | Collapsed OR | `collapsed_or_rate` | 100% — **forbidden headline** |
+
+Wall on B3: `2` lexicon-only-without-topology · `0` topology-only · `0` gap-both.
+
+Reproduce comparison artifact:
+
+```bash
+python3 scripts/run_universal_root_baseline_compare_v1.py
+# → reports/baseline_vs_dual_plane_v1.json (alias)
+# → reports/universal_root_phase1a_baseline_compare_v1_latest.json (canonical)
+```
+
 **Dual-plane integrity:** we report planes separately — `collapsed_combined_score: null` (by design).
 
 **Corpus reference counts** (topology index): **31,102** verse nodes · **32,082** atom nodes — see crosswalk artifact after smoke.
