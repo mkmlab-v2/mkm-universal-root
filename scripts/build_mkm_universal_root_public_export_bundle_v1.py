@@ -20,6 +20,11 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.universal_root_public_push_gate_lib_v1 import evaluate_public_push_gate  # noqa: E402
+
 MANIFEST = ROOT / "docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json"
 README_SSOT = ROOT / "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md"
 CONTRIBUTING_SSOT = ROOT / "docs/final/artifacts/mkm_universal_root_contributing_en_v1.md"
@@ -144,7 +149,37 @@ def main() -> int:
     ap.add_argument("--out-dir", type=Path, default=OUT_DIR_DEFAULT)
     ap.add_argument("--out", type=Path, default=OUT_REPORT)
     ap.add_argument("--run-smoke", action="store_true", help="Run OSS smoke after verify (monorepo cwd)")
+    ap.add_argument(
+        "--skip-push-gate",
+        action="store_true",
+        help="Skip public push substance gate (not for live export)",
+    )
+    ap.add_argument(
+        "--commander-override-push-gate",
+        action="store_true",
+        help="Bypass public push gate (commander only)",
+    )
     args = ap.parse_args()
+
+    push_gate: dict[str, Any] | None = None
+    if args.materialize and not args.skip_push_gate:
+        push_gate = evaluate_public_push_gate(
+            action="export_materialize",
+            commander_override=args.commander_override_push_gate,
+        )
+        if not push_gate.get("ok"):
+            print(
+                json.dumps(
+                    {
+                        "ok": False,
+                        "error": "public_push_gate_blocked",
+                        "violations": push_gate.get("violations"),
+                        "reproduce": push_gate.get("reproduce_substance"),
+                    },
+                    ensure_ascii=False,
+                )
+            )
+            return 2
 
     manifest = _load_manifest(args.manifest)
     verification = verify_manifest(manifest)
@@ -178,7 +213,8 @@ def main() -> int:
         "verification": verification,
         "materialized": materialized,
         "smoke": smoke,
-        "ok": verification["ok"] and (smoke is None or smoke.get("ok", True)),
+        "public_push_gate": push_gate,
+        "ok": verification["ok"] and (smoke is None or smoke.get("ok", True)) and (push_gate is None or push_gate.get("ok", True)),
         "reproduce_verify": "py scripts/build_mkm_universal_root_public_export_bundle_v1.py --verify-only",
         "reproduce_materialize": "py scripts/build_mkm_universal_root_public_export_bundle_v1.py --materialize",
     }

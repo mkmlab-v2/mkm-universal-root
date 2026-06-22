@@ -6,6 +6,14 @@
 
 License: **MIT** — see [LICENSE](LICENSE)
 
+**Public face (5 lines)**
+
+1. Research PoC only — **not** investment, medical, or trading advice.
+2. **Live demos** = read-only observation UI; **offline bench** = reproducible metrics in this repo.
+3. Report **B0–B3** separately; never use collapsed OR (**B4**) as one “accuracy” headline.
+4. Metrics are on a **500-pair fixture** — not open-world or full-corpus warranty.
+5. `send_gate: HOLD` — third-party smoke repro on Discussions #2 still pending.
+
 ---
 
 ## Quickstart (3 commands)
@@ -17,6 +25,22 @@ python3 scripts/run_universal_root_oss_cursor_smoke_v1.py   # ~20s · exit 0 · 
 ```
 
 Windows: use `py` instead of `python3`. Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json`
+
+---
+
+## Live demo (~30s · no install)
+
+**`[HYPO]` · `[NON_GATING]` · Track C showroom — not this repo's offline smoke · not a product SLA.**
+
+Open in a browser (**no clone**, **no API keys**):
+
+| Step | What | URL |
+|------|------|-----|
+| 1 | Job spine (primary B2B demo) | https://api.jemaai.cloud/public_showroom_meaning_topology_qa_v2.html?preset=job_job_suffering_reason |
+| 2 | Logos Oracle v6 (graph + lattice) | https://api.jemaai.cloud/public_showroom_logos_oracle_v6.html?product=1 |
+| 3 | Meaning topology graph | https://api.jemaai.cloud/public_showroom_meaning_topology_graph_v1.html |
+
+Showroom pages are **read-only demos**. Reproducible claims for **this OSS repo** stay on the **offline 500-pair fixture** below — do not treat live UI as a benchmark.
 
 ---
 
@@ -69,6 +93,15 @@ Reproduce comparison artifact:
 python3 scripts/run_universal_root_baseline_compare_v1.py
 # → reports/baseline_vs_dual_plane_v1.json (alias)
 # → reports/universal_root_phase1a_baseline_compare_v1_latest.json (canonical)
+```
+
+### Named public mini-bench — UR-B0-MISS-HOLDOUT-v1
+
+**94** English-only naive (B0) miss pairs on the same fixture — third-party evaluable holdout (not a global benchmark).
+
+```bash
+python3 scripts/build_universal_root_b0_miss_holdout_bench_v1.py
+# → tests/fixtures/universal_root_b0_miss_holdout_bench_v1.json
 ```
 
 **Dual-plane integrity:** we report planes separately — `collapsed_combined_score: null` (by design).
