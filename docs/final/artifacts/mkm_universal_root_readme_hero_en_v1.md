@@ -6,13 +6,19 @@
 
 License: **MIT** — see [LICENSE](LICENSE)
 
+## MKM Honesty Engine (public spec)
+
+**Research PoC · fixture bench only · not product SLA**
+
+Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)**
+
 **Public face (5 lines)**
 
 1. Research PoC only — **not** investment, medical, or trading advice.
 2. **Live demos** = read-only observation UI; **offline bench** = reproducible metrics in this repo.
 3. Report **B0–B3** separately; never use collapsed OR (**B4**) as one “accuracy” headline.
 4. Metrics are on a **500-pair fixture** — not open-world or full-corpus warranty.
-5. `send_gate: HOLD` — third-party smoke repro on Discussions #2 still pending.
+5. `send_gate: HOLD` — third-party smoke repro verified on Discussions #2; no auto-promotion to production.
 
 ---
 
