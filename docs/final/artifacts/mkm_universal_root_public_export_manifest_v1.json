@@ -1,6 +1,6 @@
 {
   "schema": "mkm_universal_root_public_export_manifest_v1",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Curated whitelist for public mkm-universal-root export — fixture smoke, optional contributor stubs, no secrets, no full monorepo.",
   "repo_target_name": "mkm-universal-root",
   "entry_smoke": "scripts/run_universal_root_oss_cursor_smoke_v1.py",
@@ -20,6 +20,7 @@
     "LICENSE",
     "SECURITY.md",
     "docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md",
+    "docs/assets/logos_observatory_product_demo_10s.gif",
     "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md",
     "docs/final/artifacts/mkm_universal_root_contributing_en_v1.md",
     "docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json",

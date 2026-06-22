@@ -48,6 +48,10 @@ Open in a browser (**no clone**, **no API keys**):
 
 Showroom pages are **read-only demos**. Reproducible claims for **this OSS repo** stay on the **offline 500-pair fixture** below — do not treat live UI as a benchmark.
 
+**10s walkthrough (Oracle v6 · fixture-adjacent UI, not a product SLA):**
+
+![Oracle v6 showroom walkthrough — 10s](docs/assets/logos_observatory_product_demo_10s.gif)
+
 ---
 
 ## Repository scope (Y1 public export)
