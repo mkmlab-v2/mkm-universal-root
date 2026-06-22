@@ -9,8 +9,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import shutil
+import stat
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -20,6 +22,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json"
 README_SSOT = ROOT / "docs/final/artifacts/mkm_universal_root_readme_hero_en_v1.md"
+CONTRIBUTING_SSOT = ROOT / "docs/final/artifacts/mkm_universal_root_contributing_en_v1.md"
+WORKFLOW_SSOT = ROOT / "docs/final/artifacts/mkm_universal_root_github_workflow_oss_smoke_v1.yml"
 OUT_REPORT = ROOT / "reports/mkm_universal_root_public_export_bundle_v1_latest.json"
 OUT_DIR_DEFAULT = ROOT / "exports/mkm-universal-root-v1"
 PY = sys.executable
@@ -84,9 +88,24 @@ def verify_manifest(manifest: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _rmtree_onerror(func, path: str, exc_info: object) -> None:
+    """Windows: clear read-only bits on nested .git objects before retry."""
+    try:
+        os.chmod(path, stat.S_IWRITE)
+        func(path)
+    except OSError:
+        raise
+
+
+def _safe_rmtree(path: Path) -> None:
+    if not path.exists():
+        return
+    shutil.rmtree(path, onerror=_rmtree_onerror)
+
+
 def materialize(manifest: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     if out_dir.exists():
-        shutil.rmtree(out_dir)
+        _safe_rmtree(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     copied: list[str] = []
     for rel in manifest.get("paths") or []:
@@ -104,8 +123,16 @@ def materialize(manifest: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     if README_SSOT.is_file():
         (out_dir / "README.md").write_text(README_SSOT.read_text(encoding="utf-8"), encoding="utf-8")
         copied.append("README.md (from hero SSOT)")
+    if CONTRIBUTING_SSOT.is_file():
+        (out_dir / "CONTRIBUTING.md").write_text(CONTRIBUTING_SSOT.read_text(encoding="utf-8"), encoding="utf-8")
+        copied.append("CONTRIBUTING.md (from contributing SSOT)")
     (out_dir / "requirements.txt").write_text(REQUIREMENTS_TXT, encoding="utf-8")
     copied.append("requirements.txt (generated)")
+    if WORKFLOW_SSOT.is_file():
+        wf_dst = out_dir / ".github/workflows/oss-smoke.yml"
+        wf_dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(WORKFLOW_SSOT, wf_dst)
+        copied.append(".github/workflows/oss-smoke.yml (from workflow SSOT)")
     return {"out_dir": str(out_dir), "copied_count": len(copied), "copied": copied}
 
 
