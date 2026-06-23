@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_phase1a_baseline_compare_v1",
   "version": "1.0.0",
-  "generated_at_utc": "2026-06-23T01:02:47Z",
+  "generated_at_utc": "2026-06-23T01:11:42Z",
   "research_only": true,
   "send_gate": "HOLD",
   "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",

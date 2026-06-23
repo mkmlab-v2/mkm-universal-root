@@ -10,7 +10,7 @@ License: **MIT** — see [LICENSE](LICENSE)
 
 **Research PoC · fixture bench only · not product SLA**
 
-Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)** · **[docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)**
+Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)** · **[docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)** · **[B2B pilot inquiry (solo OSS)](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)**
 
 **Public face (5 lines)**
 
@@ -31,6 +31,18 @@ python3 scripts/run_universal_root_oss_cursor_smoke_v1.py   # ~20s · exit 0 · 
 ```
 
 Windows: use `py` instead of `python3`. Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json`
+
+### B2B verify — MKM-UR-Bench-5K holdout (3 commands)
+
+**Solo OSS:** no legal-review gate — **fork, run, post exit 0 on [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2).**
+
+```bash
+pip install -r requirements.txt   # if not done
+python3 scripts/run_universal_root_bench_5k_holdout_chain_v1.py
+python3 scripts/check_universal_root_bench_5k_v1.py --strict
+```
+
+Holdout headline: B0 **12.21%** · B3 **89.20%** · Δ **+76.99pp** (fixture only). Details: **[docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)**
 
 ---
 
