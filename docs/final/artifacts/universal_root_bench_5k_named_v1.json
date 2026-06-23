@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_bench_5k_named_v1",
-  "version": "1.0.0",
-  "locked_at_utc": "2026-06-22T22:00:00Z",
+  "version": "1.1.0",
+  "locked_at_utc": "2026-06-23T01:00:00Z",
   "research_only": true,
   "send_gate": "HOLD",
   "name": "MKM-UR-Bench-5K",
@@ -16,6 +16,8 @@
   "chain_report": "reports/universal_root_bench_5k_holdout_chain_v1_latest.json",
   "min_full_pairs": 5000,
   "min_holdout_pairs": 500,
+  "min_holdout_b0_rate": 0.05,
+  "generator_notes": "v1.2.0 adds ~12% massive_gen_english_surface_b0 rows for evaluable B0 on holdout; hard Strong's controls ~10%.",
   "evaluator_metrics": [
     "B0_english_only_hit_rate",
     "B3_dual_plane_aligned_rate",

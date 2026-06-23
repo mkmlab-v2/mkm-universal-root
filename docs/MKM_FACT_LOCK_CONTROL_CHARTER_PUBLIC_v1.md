@@ -26,20 +26,20 @@ This charter states **what we measure**, **what we refuse to merge**, and **how 
 |-------|-------|------|
 | **500-pair smoke** | 500 | OSS CI default · ~20s reproduce |
 | **UR-B0-MISS-HOLDOUT-v1** | 94 | B0-miss evaluable slice on 500 fixture |
-| **MKM-UR-Bench-5K** | 5000 full · **988 holdout** | Scaled dual-plane holdout (`atom_id` + `topology_probe_tokens`) |
+| **MKM-UR-Bench-5K** | 5000 full · **947 holdout** | Scaled dual-plane holdout (generator v1.2.0: english-surface B0 slice + dual-plane wiring) |
 
-**5K holdout (raw · 988 pairs · non_control 958):**
+**5K holdout (raw · 947 pairs · non_control 917):**
 
 | ID | Metric | Value |
 |----|--------|-------|
-| B0 | `english_only_hit_rate` | **0.00%** |
-| B1 | `prime_hit_rate` | **84.86%** |
-| B2 | `verse_reachable_rate` | **84.86%** |
-| B3 | `dual_plane_aligned_rate` | **84.86%** |
+| B0 | `english_only_hit_rate` | **12.21%** |
+| B1 | `prime_hit_rate` | **89.20%** |
+| B2 | `verse_reachable_rate` | **89.20%** |
+| B3 | `dual_plane_aligned_rate` | **89.20%** |
 
-**Why B0 = 0% on 5K holdout:** rows wire Strong's / atom-linked probes — not English surface tokens. B0 is still reported; do not hide it. Margin narrative = **B3 − B0** on the **same holdout**, not vs 500-pair smoke.
+**B0 slice (v1.2.0):** ~**12%** `massive_gen_english_surface_b0` rows use verified NSM-style English probes (dual-plane wired). Remaining rows are atom-linked / Strong's-style; **~10%** hard Strong's-only controls preserve wall divergence. Margin = **B3 − B0** on the **same holdout** (currently **+76.99pp**), not vs 500-pair smoke.
 
-**Wall on holdout:** `gap_both_planes` **145** (Strong's-only hard controls · ~15%) · `aligned_both_planes` **813**.
+**Wall on holdout:** `gap_both_planes` **99** · `aligned_both_planes` **818**.
 
 ---
 

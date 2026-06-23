@@ -67,14 +67,23 @@ def evaluate(*, ssot_path: Path = SSOT) -> dict[str, Any]:
     b0 = next((m for m in phase_doc.get("methods") or [] if m.get("id") == "B0"), {})
     b3 = next((m for m in phase_doc.get("methods") or [] if m.get("id") == "B3"), {})
 
+    b0_rate = b0.get("primary_value")
+    min_b0 = ssot.get("min_holdout_b0_rate")
+    if min_b0 is not None and b0_rate is not None and float(b0_rate) < float(min_b0):
+        violations.append(f"holdout_b0_below_min:{b0_rate}<{min_b0}")
+
     ok = not violations
+    delta_b3_b0 = None
+    if b0_rate is not None and b3.get("primary_value") is not None:
+        delta_b3_b0 = round(float(b3["primary_value"]) - float(b0_rate), 4)
     return {
         "bench_5k_ok": ok,
         "bench_name": ssot.get("name") or "MKM-UR-Bench-5K",
         "full_pair_count": int(full_doc.get("pair_count") or 0),
         "holdout_pair_count": int(holdout_doc.get("pair_count") or 0),
-        "B0_english_only_hit_rate": b0.get("primary_value"),
+        "B0_english_only_hit_rate": b0_rate,
         "B3_dual_plane_aligned_rate": b3.get("primary_value"),
+        "delta_b3_minus_b0": delta_b3_b0,
         "violations": violations,
         "ssot": str(ssot_path.relative_to(ROOT)).replace("\\", "/"),
     }

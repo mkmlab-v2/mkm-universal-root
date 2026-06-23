@@ -4,6 +4,8 @@
 Rules (MKM_MASSIVE_GEN_RULES):
 - Diversity: OT:NT ≈ 7:3 on non-negative rows.
 - Difficulty: ~40% easy (direct lexicon probe), ~60% multihop (co-atom / bridge).
+- B0 evaluability: ~12% english-surface rows (verified NSM-style en probes + dual-plane wiring).
+- Wall controls: ~10% Strong's-only hard rows (no atom_id / topology_probe_tokens).
 - Holdout: deterministic 80/20 train|holdout split by pair key hash.
 - IP: no original_script_text; no canonical-500 duplicate probe keys; ASCII-safe export probes.
 """
@@ -302,6 +304,78 @@ def _load_hard_strongs_pool(lexicon_path: Path, dual_atom_ids: set[str]) -> list
     return pool
 
 
+def _load_verified_english_surface_pool(
+    canonical_path: Path,
+    lexicon_path: Path,
+) -> list[dict[str, Any]]:
+    """English tokens that hit lexicon via naive en probe (canonical 500 + NSM catalog)."""
+    seen: set[str] = set()
+    pool: list[dict[str, Any]] = []
+
+    def _try_add(lang: dict[str, Any]) -> None:
+        en = str(lang.get("en") or "").strip().lower()
+        if not en or en in seen:
+            return
+        if not en.replace(" ", "").replace("_", "").isascii():
+            return
+        hit, _ = lexicon_hits_for_text(en, lexicon_path)
+        if not hit:
+            return
+        seen.add(en)
+        spec: dict[str, Any] = {"en": en}
+        greek = str(lang.get("greek") or "").strip().lower()
+        hebrew = str(lang.get("hebrew") or "").strip().lower()
+        if greek:
+            spec["greek"] = greek
+        if hebrew:
+            spec["hebrew"] = hebrew
+        pool.append(spec)
+
+    if canonical_path.is_file():
+        for row in _read_json(canonical_path).get("samples") or []:
+            if not isinstance(row, dict) or row.get("control") == "negative":
+                continue
+            lang = row.get("lang_probes") if isinstance(row.get("lang_probes"), dict) else {}
+            _try_add(lang)
+
+    try:
+        from scripts.nsm_41k_crosswalk_catalog_v1 import NSM_CROSSWALK_100  # noqa: WPS433
+
+        for row in NSM_CROSSWALK_100:
+            if isinstance(row, dict):
+                lang = row.get("lang_probes") if isinstance(row.get("lang_probes"), dict) else {}
+                _try_add(lang)
+    except ImportError:
+        pass
+
+    return pool
+
+
+def _english_surface_b0_row(en_spec: dict[str, Any], dual_entry: dict[str, Any], idx: int) -> dict[str, Any]:
+    en = str(en_spec["en"])
+    lang_probes: dict[str, str] = {"en": en}
+    if en_spec.get("greek"):
+        lang_probes["greek"] = str(en_spec["greek"])
+    if en_spec.get("hebrew"):
+        lang_probes["hebrew"] = str(en_spec["hebrew"])
+    row = {
+        "prime_en": f"ur_mass_en_b0_{idx:05d}",
+        "probe_tokens": [en],
+        "lang_probes": lang_probes,
+        "difficulty": "easy",
+        "hop_count": 1,
+        "testament_bucket": dual_entry["testament"],
+        "labels": ["research_only", "universal_root_fixture_v1", "auto_generated"],
+        "source_note": "massive_gen_english_surface_b0",
+    }
+    _attach_dual_plane_fields(row, dual_entry)
+    row["answer_hash"] = _answer_hash(
+        {"kind": "english_surface_b0", "en": en, "atom_id": dual_entry["atom_id"]}
+    )
+    row["split"] = _split_bucket(_pair_key(row))
+    return row
+
+
 def _hard_strongs_row(entry: dict[str, Any], idx: int) -> dict[str, Any]:
     probe = str(entry["strongs"])
     row = {
@@ -497,8 +571,10 @@ def generate_massive_pairs(
 
     neg_target = max(25, int(target * neg_fraction))
     non_neg_target = target - neg_target
-    hard_target = min(len(hard_pool), max(1, int(non_neg_target * 0.15)))
-    dual_non_neg = non_neg_target - hard_target
+    english_pool = _load_verified_english_surface_pool(canonical_path, lexicon_path)
+    english_b0_target = min(max(1, int(non_neg_target * 0.12)), len(english_pool) * 40, non_neg_target - 2)
+    hard_target = min(len(hard_pool), max(1, int(non_neg_target * 0.10)))
+    dual_non_neg = non_neg_target - hard_target - english_b0_target
     easy_target = int(dual_non_neg * 0.40)
     mh_target = dual_non_neg - easy_target
 
@@ -536,6 +612,19 @@ def generate_massive_pairs(
         if try_add(row):
             stats["hard_strongs"] += 1
             hard_i += 1
+
+    # English-surface B0 evaluable rows (verified en lexicon hit + dual-plane wiring)
+    en_i = 0
+    dual_for_en = atom_pool[:]
+    rng.shuffle(dual_for_en)
+    for entry in dual_for_en:
+        if stats["english_surface_b0"] >= english_b0_target or not english_pool:
+            break
+        en_spec = english_pool[en_i % len(english_pool)]
+        row = _english_surface_b0_row(en_spec, entry, en_i)
+        if try_add(row):
+            stats["english_surface_b0"] += 1
+            en_i += 1
 
     # Easy dual-plane rows — quota toward OT:NT ≈ 7:3
     easy_candidates = atom_pool[:]
@@ -603,6 +692,8 @@ def generate_massive_pairs(
 
     meta = {
         "dual_plane_atom_pool": len(atom_pool),
+        "english_surface_pool": len(english_pool),
+        "english_surface_b0_target": english_b0_target,
         "hard_strongs_pool": len(hard_pool),
         "hard_strongs_target": hard_target,
         "topology_verse_pool": len(topo_pool),
@@ -625,8 +716,8 @@ def build_fixture_doc(
 ) -> dict[str, Any]:
     return {
         "schema": "nsm_41k_lexicon_crosswalk_massive_v1",
-        "version": "1.1.0",
-        "description": f"Scaled UR bench ({len(samples)} pairs) — dual-plane atom wiring (topology_probe_tokens + atom_id); canonical 500 disjoint.",
+        "version": "1.2.0",
+        "description": f"Scaled UR bench ({len(samples)} pairs) — dual-plane wiring + english-surface B0 slice; canonical 500 disjoint.",
         "source_note": "scripts/bench/generate_massive_universal_root_pairs_v1.py",
         "research_only": True,
         "send_gate": "HOLD",

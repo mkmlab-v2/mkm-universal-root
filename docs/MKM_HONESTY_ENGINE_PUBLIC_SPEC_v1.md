@@ -35,14 +35,14 @@ This document is a **public distillation** of how MKM reports neuro-symbolic int
 
 ### MKM-UR-Bench-5K (scaled holdout · separate from 500 smoke)
 
-| ID | Method | Metric | Raw (holdout · 988 pairs) |
+| ID | Method | Metric | Raw (holdout · 947 pairs) |
 |----|--------|--------|---------------------------|
-| B0 | English-only naive | `english_only_hit_rate` | **0.00%** |
-| B1 | Lexicon plane | `prime_hit_rate` | **84.86%** |
-| B2 | Topology plane (stub) | `verse_reachable_rate` | **84.86%** |
-| B3 | Dual-plane aligned | `dual_plane_aligned_rate` | **84.86%** |
+| B0 | English-only naive | `english_only_hit_rate` | **12.21%** |
+| B1 | Lexicon plane | `prime_hit_rate` | **89.20%** |
+| B2 | Topology plane (stub) | `verse_reachable_rate` | **89.20%** |
+| B3 | Dual-plane aligned | `dual_plane_aligned_rate` | **89.20%** |
 
-**B0 note:** holdout uses atom-linked / Strong's-style probes — not English surface tokens. Do not compare B0 to the 500-pair **78.04%** line; compare **B3 − B0 on the same holdout**.
+**B0 note (v1.2.0):** ~12% english-surface rows (`massive_gen_english_surface_b0`) use verified NSM en probes; remainder atom-linked / Strong's-style. Margin = **B3 − B0 on same holdout** (~**+77pp**); do not compare to 500-pair **78.04%** line.
 
 ```bash
 python3 scripts/run_universal_root_bench_5k_holdout_chain_v1.py

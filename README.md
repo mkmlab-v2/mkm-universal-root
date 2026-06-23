@@ -17,7 +17,7 @@ Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_
 1. Research PoC only — **not** investment, medical, or trading advice.
 2. **Live demos** = read-only observation UI; **offline bench** = reproducible metrics in this repo.
 3. Report **B0–B3** separately; never use collapsed OR (**B4**) as one “accuracy” headline.
-4. Metrics are on **fixture benches** — **500-pair** OSS smoke plus optional **MKM-UR-Bench-5K** holdout (~988 pairs) — not open-world or full-corpus warranty.
+4. Metrics are on **fixture benches** — **500-pair** OSS smoke plus optional **MKM-UR-Bench-5K** holdout (~947 pairs) — not open-world or full-corpus warranty.
 5. `send_gate: HOLD` — third-party smoke repro verified on Discussions #2; no auto-promotion to production.
 
 ---
@@ -116,16 +116,16 @@ python3 scripts/build_universal_root_b0_miss_holdout_bench_v1.py
 
 ### Named scaled bench — MKM-UR-Bench-5K (holdout split)
 
-**988** holdout pairs (from **5000** auto-generated fixture; **80/20** split). Dual-plane rows wire `atom_id` + `topology_probe_tokens` (Strong's → normalized atom forms); **~15%** Strong's-only hard controls preserve wall divergence.
+**947** holdout pairs (from **5000** auto-generated fixture; **80/20** split). Generator **v1.2.0** adds ~**12%** english-surface B0 rows (verified NSM en probes + dual-plane wiring); ~**10%** Strong's-only hard controls preserve wall divergence.
 
 | ID | Method | Metric | Raw value (holdout) |
 |----|--------|--------|---------------------|
-| B0 | English-only naive | `english_only_hit_rate` | **0.00%** |
-| B1 | Lexicon plane (41k) | `prime_hit_rate` | **84.86%** |
-| B2 | Topology plane (stub) | `verse_reachable_rate` | **84.86%** |
-| B3 | Dual-plane aligned | `dual_plane_aligned_rate` | **84.86%** |
+| B0 | English-only naive | `english_only_hit_rate` | **12.21%** |
+| B1 | Lexicon plane (41k) | `prime_hit_rate` | **89.20%** |
+| B2 | Topology plane (stub) | `verse_reachable_rate` | **89.20%** |
+| B3 | Dual-plane aligned | `dual_plane_aligned_rate` | **89.20%** |
 
-Not a regression of the 500-pair smoke — different probe distribution and scale. Use for **holdout discipline + dual-plane margin (B3−B0)**, not as open-world warranty.
+Not a regression of the 500-pair smoke — different probe distribution and scale. Use for **holdout discipline + dual-plane margin (B3−B0 ≈ +77pp)**, not as open-world warranty.
 
 ```bash
 python3 scripts/check_universal_root_bench_5k_v1.py --strict
