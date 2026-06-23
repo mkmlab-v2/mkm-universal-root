@@ -1,0 +1,103 @@
+{
+  "schema": "universal_root_phase1a_baseline_compare_v1",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-06-23T00:33:55Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+  "pair_count": 988,
+  "non_control_pairs": 958,
+  "negative_control_pairs": 30,
+  "methods": [
+    {
+      "id": "B0",
+      "name": "english_only_naive",
+      "description": "English probe hit only (no multilingual lexicon gate)",
+      "primary_metric": "english_only_hit_rate",
+      "primary_value": 0.0,
+      "pair_count": 958,
+      "hits": 0,
+      "raw": {
+        "english_only_distortion_rate": 0.0
+      }
+    },
+    {
+      "id": "B1",
+      "name": "lexicon_plane",
+      "description": "41k lexicon multilingual prime hit (audit baseline)",
+      "primary_metric": "prime_hit_rate",
+      "primary_value": 0.8486,
+      "pair_count": 958,
+      "hits": 813
+    },
+    {
+      "id": "B2",
+      "name": "topology_plane",
+      "description": "31k verse topology reachability without lexicon gate",
+      "primary_metric": "verse_reachable_rate",
+      "primary_value": 0.8486,
+      "pair_count": 958,
+      "hits": 813
+    },
+    {
+      "id": "B3",
+      "name": "dual_plane_aligned",
+      "description": "Both lexicon and topology planes hit (MKM dual-plane integrity)",
+      "primary_metric": "dual_plane_aligned_rate",
+      "primary_value": 0.8486,
+      "pair_count": 958,
+      "hits": 813,
+      "wall_lexicon_only_without_topology": 0,
+      "wall_topology_only_without_lexicon": 0,
+      "wall_gap_both_planes": 145
+    },
+    {
+      "id": "B4",
+      "name": "collapsed_or_forbidden",
+      "description": "Lexicon OR topology (single headline — forbidden for public copy)",
+      "primary_metric": "collapsed_or_rate",
+      "primary_value": 0.8486,
+      "pair_count": 958,
+      "hits": 813,
+      "forbidden_headline": true
+    }
+  ],
+  "headline_table": [
+    {
+      "method": "english_only_naive",
+      "metric": "english_only_hit_rate",
+      "value": 0.0,
+      "note": "reportable_raw"
+    },
+    {
+      "method": "lexicon_plane",
+      "metric": "prime_hit_rate",
+      "value": 0.8486,
+      "note": "reportable_raw"
+    },
+    {
+      "method": "topology_plane",
+      "metric": "verse_reachable_rate",
+      "value": 0.8486,
+      "note": "reportable_raw"
+    },
+    {
+      "method": "dual_plane_aligned",
+      "metric": "dual_plane_aligned_rate",
+      "value": 0.8486,
+      "note": "reportable_raw"
+    },
+    {
+      "method": "collapsed_or_forbidden",
+      "metric": "collapsed_or_rate",
+      "value": 0.8486,
+      "note": "forbidden"
+    }
+  ],
+  "delta_dual_minus_lexicon": 0.0,
+  "delta_dual_minus_topology": 0.0,
+  "interpretation": "Dual-plane reports B1/B2 separately; B3 is stricter aligned subset. Do not publish B4 as model quality.",
+  "crosswalk_pointer": "reports/universal_root_topology_crosswalk_v1_latest.json",
+  "reproduce": "py scripts/build_universal_root_phase1a_baseline_compare_v1.py",
+  "ok": true
+}

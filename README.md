@@ -10,14 +10,14 @@ License: **MIT** — see [LICENSE](LICENSE)
 
 **Research PoC · fixture bench only · not product SLA**
 
-Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)**
+Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)** · **[docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)**
 
 **Public face (5 lines)**
 
 1. Research PoC only — **not** investment, medical, or trading advice.
 2. **Live demos** = read-only observation UI; **offline bench** = reproducible metrics in this repo.
 3. Report **B0–B3** separately; never use collapsed OR (**B4**) as one “accuracy” headline.
-4. Metrics are on a **500-pair fixture** — not open-world or full-corpus warranty.
+4. Metrics are on **fixture benches** — **500-pair** OSS smoke plus optional **MKM-UR-Bench-5K** holdout (~988 pairs) — not open-world or full-corpus warranty.
 5. `send_gate: HOLD` — third-party smoke repro verified on Discussions #2; no auto-promotion to production.
 
 ---
@@ -61,7 +61,7 @@ Showroom pages are **read-only demos**. Reproducible claims for **this OSS repo*
 | In this repo | Not in this export |
 |--------------|-------------------|
 | Offline smoke runner (`scripts/run_universal_root_oss_cursor_smoke_v1.py`) | Hosted APIs, telemetry, or upload/ingestion |
-| **500-pair** fixture bench (`tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json`) | Full monorepo, compression KPI lane (~47.5%), live trading |
+| **500-pair** smoke fixture + optional **MKM-UR-Bench-5K** holdout (`tests/fixtures/nsm_41k_lexicon_crosswalk_5000_v1.json`) | Full monorepo, compression KPI lane (~47.5%), live trading |
 | Topology crosswalk + gate scripts (see `docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json`) | KO shorts, clinical SOAP, auto-training on user docs |
 | Dual-plane **raw** metrics; `collapsed_combined_score: null` by design | Single headline “accuracy” or global hallucination claims |
 | Corpus **reference counts** (41k lexicon plane · 31,102 verse / 32,082 atom index labels) — not a warranty on open-world performance | Proprietary bulk dumps or unreleased B-track JSONL |
@@ -112,6 +112,24 @@ python3 scripts/run_universal_root_baseline_compare_v1.py
 ```bash
 python3 scripts/build_universal_root_b0_miss_holdout_bench_v1.py
 # → tests/fixtures/universal_root_b0_miss_holdout_bench_v1.json
+```
+
+### Named scaled bench — MKM-UR-Bench-5K (holdout split)
+
+**988** holdout pairs (from **5000** auto-generated fixture; **80/20** split). Dual-plane rows wire `atom_id` + `topology_probe_tokens` (Strong's → normalized atom forms); **~15%** Strong's-only hard controls preserve wall divergence.
+
+| ID | Method | Metric | Raw value (holdout) |
+|----|--------|--------|---------------------|
+| B0 | English-only naive | `english_only_hit_rate` | **0.00%** |
+| B1 | Lexicon plane (41k) | `prime_hit_rate` | **84.86%** |
+| B2 | Topology plane (stub) | `verse_reachable_rate` | **84.86%** |
+| B3 | Dual-plane aligned | `dual_plane_aligned_rate` | **84.86%** |
+
+Not a regression of the 500-pair smoke — different probe distribution and scale. Use for **holdout discipline + dual-plane margin (B3−B0)**, not as open-world warranty.
+
+```bash
+python3 scripts/check_universal_root_bench_5k_v1.py --strict
+# Pre-built artifacts: reports/universal_root_bench_5k_holdout_phase1a_v1_latest.json
 ```
 
 **Dual-plane integrity:** we report planes separately — `collapsed_combined_score: null` (by design).

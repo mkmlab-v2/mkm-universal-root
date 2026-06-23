@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_b0_miss_holdout_bench_v1",
   "version": "1.0.0",
-  "generated_at_utc": "2026-06-22T18:30:01Z",
+  "generated_at_utc": "2026-06-23T00:34:20Z",
   "research_only": true,
   "send_gate": "HOLD",
   "bench_name": "UR-B0-MISS-HOLDOUT-v1",

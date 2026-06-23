@@ -1,0 +1,77 @@
+{
+  "schema": "universal_root_bench_5k_holdout_chain_v1",
+  "generated_at_utc": "2026-06-23T00:33:55Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "ok": true,
+  "steps": [
+    {
+      "step": "build_holdout_fixture",
+      "exit_code": 0,
+      "tail": "{\"ok\": true, \"pair_count\": 988, \"out\": \"C:\\\\workspace\\\\tests\\\\fixtures\\\\universal_root_bench_5k_holdout_v1.json\", \"report\": \"C:\\\\workspace\\\\reports\\\\universal_root_bench_5k_holdout_fixture_v1_latest.json\"}\n"
+    },
+    {
+      "step": "lexicon_audit",
+      "exit_code": 0,
+      "tail": "{\"ok\": true, \"gate_ok\": false, \"out\": \"reports/nsm_41k_lexicon_crosswalk_audit_bench5k_holdout_v1_latest.json\", \"prime_hit_rate\": 0.0, \"distortion_rate\": 0.0, \"aligned_original\": 0, \"gaps\": 958, \"research_verdict\": \"moderate_crosswalk\"}\n"
+    },
+    {
+      "step": "topology_crosswalk",
+      "exit_code": 0,
+      "tail": "{\"ok\": true, \"summary\": {\"pair_count\": 988, \"non_control_pairs\": 958, \"verse_reachable_rate\": 0.8486, \"prime_hit_rate\": 0.8486, \"lexicon_only_without_topology_rate\": 0.0}, \"out\": \"reports/universal_root_topology_crosswalk_bench5k_holdout_v1_latest.json\"}\n"
+    },
+    {
+      "step": "phase1a_b0_b3",
+      "exit_code": 0,
+      "tail": "{\"ok\": true, \"out\": \"C:\\\\workspace\\\\reports\\\\universal_root_bench_5k_holdout_phase1a_v1_latest.json\", \"dual_plane_aligned_rate\": 0.8486}\n"
+    }
+  ],
+  "bench_name": "MKM-UR-Bench-5K",
+  "holdout_pair_count": 988,
+  "methods": {
+    "B0_english_only_hit_rate": 0.0,
+    "B1_lexicon_prime_hit_rate": 0.8486,
+    "B2_topology_reachable_rate": 0.8486,
+    "B3_dual_plane_aligned_rate": 0.8486
+  },
+  "delta_b3_minus_b0": 0.8486,
+  "lexicon_plane": {
+    "plane": "lexicon_41k",
+    "pair_count": 988,
+    "non_control_pairs": 958,
+    "negative_control_pairs": 30,
+    "prime_hit_rate": 0.8486,
+    "prime_hit_rate_source": "crosswalk_atom_linkage",
+    "english_only_distortion_rate": 0.0,
+    "negative_control_leak_count": 1,
+    "audit_mode": "raw_latin",
+    "audit_pointer": "reports/nsm_41k_lexicon_crosswalk_audit_bench5k_holdout_v1_latest.json"
+  },
+  "topology_plane": {
+    "plane": "topology_31k",
+    "pair_count": 988,
+    "non_control_pairs": 958,
+    "negative_control_pairs": 30,
+    "verse_reachable_rate": 0.8486,
+    "negative_topology_leak_count": 0,
+    "corpus_verse_nodes": 279,
+    "corpus_atom_nodes": 2311
+  },
+  "wall_divergence": {
+    "both_planes_hit": 813,
+    "lexicon_only_without_topology": 0,
+    "topology_only_without_lexicon": 0,
+    "gap_both_planes": 145,
+    "lexicon_only_without_topology_rate": 0.0,
+    "plane_separation_reported": true,
+    "collapsed_combined_score": null
+  },
+  "audit_prime_hit_rate": 0.0,
+  "artifacts": {
+    "holdout_fixture": "tests/fixtures/universal_root_bench_5k_holdout_v1.json",
+    "audit": "reports/nsm_41k_lexicon_crosswalk_audit_bench5k_holdout_v1_latest.json",
+    "crosswalk": "reports/universal_root_topology_crosswalk_bench5k_holdout_v1_latest.json",
+    "phase1a": "reports/universal_root_bench_5k_holdout_phase1a_v1_latest.json"
+  },
+  "reproduce": "py scripts/run_universal_root_bench_5k_holdout_chain_v1.py"
+}

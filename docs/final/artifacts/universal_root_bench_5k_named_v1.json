@@ -1,0 +1,31 @@
+{
+  "schema": "universal_root_bench_5k_named_v1",
+  "version": "1.0.0",
+  "locked_at_utc": "2026-06-22T22:00:00Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "name": "MKM-UR-Bench-5K",
+  "description": "Scaled UR fixture bench — 5K auto-gen pairs with deterministic 80/20 holdout for B0/B3 dual-plane reporting.",
+  "full_fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_5000_v1.json",
+  "holdout_fixture": "tests/fixtures/universal_root_bench_5k_holdout_v1.json",
+  "generator": "scripts/bench/generate_massive_universal_root_pairs_v1.py",
+  "holdout_build": "scripts/build_universal_root_bench_5k_holdout_fixture_v1.py",
+  "chain": "scripts/run_universal_root_bench_5k_holdout_chain_v1.py",
+  "check": "scripts/check_universal_root_bench_5k_v1.py",
+  "phase1a_report": "reports/universal_root_bench_5k_holdout_phase1a_v1_latest.json",
+  "chain_report": "reports/universal_root_bench_5k_holdout_chain_v1_latest.json",
+  "min_full_pairs": 5000,
+  "min_holdout_pairs": 500,
+  "evaluator_metrics": [
+    "B0_english_only_hit_rate",
+    "B3_dual_plane_aligned_rate",
+    "delta_b3_minus_b0",
+    "holdout_pair_count"
+  ],
+  "positioning": {
+    "fixture_bench_only": true,
+    "not_open_world_warranty": true,
+    "canonical_500_smoke_unchanged": true
+  },
+  "reproduce": "py scripts/run_universal_root_bench_5k_holdout_chain_v1.py && py scripts/check_universal_root_bench_5k_v1.py --strict"
+}

@@ -33,6 +33,24 @@ This document is a **public distillation** of how MKM reports neuro-symbolic int
 
 **Named mini-bench:** UR-B0-MISS-HOLDOUT-v1 — **94** B0-miss pairs (evaluable holdout slice, not a global benchmark).
 
+### MKM-UR-Bench-5K (scaled holdout · separate from 500 smoke)
+
+| ID | Method | Metric | Raw (holdout · 988 pairs) |
+|----|--------|--------|---------------------------|
+| B0 | English-only naive | `english_only_hit_rate` | **0.00%** |
+| B1 | Lexicon plane | `prime_hit_rate` | **84.86%** |
+| B2 | Topology plane (stub) | `verse_reachable_rate` | **84.86%** |
+| B3 | Dual-plane aligned | `dual_plane_aligned_rate` | **84.86%** |
+
+**B0 note:** holdout uses atom-linked / Strong's-style probes — not English surface tokens. Do not compare B0 to the 500-pair **78.04%** line; compare **B3 − B0 on the same holdout**.
+
+```bash
+python3 scripts/run_universal_root_bench_5k_holdout_chain_v1.py
+python3 scripts/check_universal_root_bench_5k_v1.py --strict
+```
+
+See also: [MKM Fact-Lock Control Charter](MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)
+
 **Corpus reference counts** (labels only): 31,102 verse nodes · 32,082 atom index labels — **not** a warranty on open-world performance. Export ships a **&lt;1MB topology stub** aligned to the fixture, not the full private graph.
 
 ---
