@@ -1,7 +1,7 @@
 {
   "schema": "universal_root_gate_spec_v1",
   "version": "1.1.0",
-  "generated_at_utc": "2026-06-22T09:55:01Z",
+  "generated_at_utc": "2026-06-23T06:19:45Z",
   "research_only": true,
   "send_gate": "HOLD",
   "hypothesis_class": "HYPO",
@@ -202,7 +202,7 @@
   },
   "baseline_observed": {
     "phase": "17",
-    "observed_at_utc": "2026-06-22T09:55:01Z",
+    "observed_at_utc": "2026-06-23T06:19:45Z",
     "distortion_raw_latin": {
       "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
       "audit_mode": "raw_latin",
@@ -421,6 +421,7 @@
         "non_control_pairs": 428,
         "negative_control_pairs": 72,
         "prime_hit_rate": 0.9953,
+        "prime_hit_rate_source": "lexicon_audit_baseline",
         "english_only_distortion_rate": 0.0047,
         "negative_control_leak_count": 1,
         "audit_mode": "deepnsm_shadow",
@@ -433,8 +434,8 @@
         "negative_control_pairs": 72,
         "verse_reachable_rate": 0.9953,
         "negative_topology_leak_count": 0,
-        "corpus_verse_nodes": 31102,
-        "corpus_atom_nodes": 32082
+        "corpus_verse_nodes": 279,
+        "corpus_atom_nodes": 2311
       },
       "wall_divergence": {
         "both_planes_hit": 426,
