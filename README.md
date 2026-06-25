@@ -6,6 +6,20 @@
 
 License: **MIT** — see [LICENSE](LICENSE)
 
+## At a glance
+
+**What:** Offline **fixture smoke** for dual-plane lexicon + topology integrity — research PoC, not a hosted API or GPT replacement.
+
+| Try this | Where |
+|----------|--------|
+| **~20s repro** (no API keys) | [Quickstart](#quickstart-3-commands) — clone → smoke → `exit 0` |
+| **Observe-only UI** (~30s, no install) | [Logos Studio](https://logos.jema-ai.com/logos-research/studio?q=job_job_suffering_reason&autorun=1&demo=1) · [Track C showroom](https://api.jemaai.cloud/public_showroom_logos_oracle_v6.html?product=1) |
+| **Third-party repro** | [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2) |
+
+Live pages are **read-only observation** — reproducible metrics for this repo stay on the **offline fixture bench** below. `send_gate: HOLD` · not investment or medical advice.
+
+---
+
 ## MKM Honesty Engine (public spec)
 
 **Research PoC · fixture bench only · not product SLA**
@@ -54,7 +68,8 @@ Open in a browser (**no clone**, **no API keys**):
 
 | Step | What | URL |
 |------|------|-----|
-| 1 | Job spine (primary B2B demo) | https://api.jemaai.cloud/public_showroom_meaning_topology_qa_v2.html?preset=job_job_suffering_reason |
+| 0 | Logos Studio (observe-only · citation lock UI) | https://logos.jema-ai.com/logos-research/studio?q=job_job_suffering_reason&autorun=1&demo=1 |
+| 1 | Job spine (Track C showroom) | https://api.jemaai.cloud/public_showroom_meaning_topology_qa_v2.html?preset=job_job_suffering_reason |
 | 2 | Logos Oracle v6 (graph + lattice) | https://api.jemaai.cloud/public_showroom_logos_oracle_v6.html?product=1 |
 | 3 | Meaning topology graph | https://api.jemaai.cloud/public_showroom_meaning_topology_graph_v1.html |
 
