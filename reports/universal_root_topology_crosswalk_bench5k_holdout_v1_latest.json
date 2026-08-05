@@ -1,0 +1,6658 @@
+{
+  "schema": "universal_root_topology_crosswalk_v1",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-06-23T01:11:42Z",
+  "research_only": true,
+  "send_gate": "HOLD",
+  "hypothesis_class": "HYPO",
+  "fixture": "tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json",
+  "lexicon_audit": "tests/fixtures/universal_root_bench_5k_holdout_v1.json",
+  "lexicon_plane": {
+    "plane": "lexicon_41k",
+    "pair_count": 947,
+    "non_control_pairs": 917,
+    "negative_control_pairs": 30,
+    "prime_hit_rate": 0.892,
+    "prime_hit_rate_source": "crosswalk_atom_linkage",
+    "english_only_distortion_rate": 0.1178,
+    "negative_control_leak_count": 1,
+    "audit_mode": "raw_latin",
+    "audit_pointer": "reports/nsm_41k_lexicon_crosswalk_audit_bench5k_holdout_v1_latest.json"
+  },
+  "topology_plane": {
+    "plane": "topology_31k",
+    "pair_count": 947,
+    "non_control_pairs": 917,
+    "negative_control_pairs": 30,
+    "verse_reachable_rate": 0.892,
+    "negative_topology_leak_count": 0,
+    "corpus_verse_nodes": 279,
+    "corpus_atom_nodes": 2311
+  },
+  "wall_divergence": {
+    "both_planes_hit": 818,
+    "lexicon_only_without_topology": 0,
+    "topology_only_without_lexicon": 0,
+    "gap_both_planes": 99,
+    "lexicon_only_without_topology_rate": 0.0,
+    "plane_separation_reported": true,
+    "collapsed_combined_score": null
+  },
+  "delta_topology_minus_lexicon": {
+    "verse_reachable_minus_prime_hit_rate": 0.0
+  },
+  "summary": {
+    "pair_count": 947,
+    "non_control_pairs": 917,
+    "verse_reachable_rate": 0.892,
+    "prime_hit_rate": 0.892,
+    "lexicon_only_without_topology_rate": 0.0
+  },
+  "rows": [
+    {
+      "prime_en": "control_negative_tailwind_0012",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_eslint_0013",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_prometheus_0018",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_kubernetes_0024",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_nextjs_0041",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_kubernetes_0044",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_eslint_0073",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_jwt_0075",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_prometheus_0078",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_fastapi_0087",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_openssl_0097",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_kubernetes_0104",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_cloudflare_0108",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_sha256_0116",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_typescript_0125",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_cloudflare_0128",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_terraform_0129",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_typescript_0145",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_openssl_0157",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_uvicorn_0160",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_tailwind_0172",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_oauth_0174",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_grafana_0179",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_docker_0183",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_cloudflare_0188",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_mongodb_0191",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_jwt_0195",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_nextjs_0201",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_pytest_0222",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "control_negative_typescript_0225",
+      "control": "negative",
+      "topology_reachable": false,
+      "status": "negative_control_ok"
+    },
+    {
+      "prime_en": "ur_mass_hard_00007",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00028",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00030",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00036",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00038",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00039",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00048",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00050",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00054",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00058",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00065",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00077",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00086",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00090",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00096",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00119",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00120",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00137",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00141",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00145",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00149",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00151",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00153",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00156",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00167",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00170",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00172",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00176",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00198",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00201",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00209",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00210",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00226",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00227",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00229",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00233",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00240",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00242",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00245",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00250",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00251",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00254",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00259",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00262",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00265",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00266",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00270",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00272",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00275",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00281",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00284",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00286",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00293",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00294",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00298",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00301",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00306",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00309",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00311",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00322",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00325",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00336",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00340",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00342",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00343",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00346",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00350",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00351",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00354",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00355",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00357",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00360",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00369",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00372",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00374",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00375",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00376",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00377",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00388",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00390",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00392",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00398",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00401",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00408",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00417",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00420",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00425",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00427",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00430",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00431",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00435",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00445",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00451",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00453",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00455",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00458",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00466",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00470",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_hard_00471",
+      "lexicon_hit": false,
+      "topology_reachable": false,
+      "wall_status": "gap_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00000",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00007",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00009",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00014",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00025",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00026",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00034",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00036",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00044",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00052",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00054",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00061",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00064",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "aligned_original_language"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00065",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00067",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00072",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00080",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00087",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00092",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00105",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00107",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "aligned_original_language"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00113",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00126",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00140",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00155",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00157",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00162",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00180",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00183",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00184",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00186",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00187",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00192",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00194",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00198",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00204",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00205",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00207",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00221",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00222",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00225",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00231",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00238",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00242",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00246",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00247",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00252",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "aligned_original_language"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00262",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00263",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00266",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00276",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00280",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00289",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00295",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00297",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00300",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00301",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00306",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00310",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00311",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00312",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00317",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00328",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00335",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00340",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00347",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00354",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00356",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00359",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00360",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00365",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00368",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00370",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "aligned_original_language"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00372",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00374",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00381",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00383",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00385",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00395",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00426",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00427",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00430",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00433",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00438",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00439",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00448",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00455",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00465",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00469",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00474",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00477",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00481",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00489",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00499",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00500",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00503",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00505",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00507",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00510",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00514",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00516",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00522",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00523",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00526",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00529",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00533",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00543",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00544",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00556",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00562",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00565",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_en_b0_00566",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "english_only_distortion"
+    },
+    {
+      "prime_en": "ur_mass_easy_00006",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00010",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00019",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00026",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00033",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00036",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00037",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00047",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00052",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00055",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00057",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00079",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00090",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00105",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00122",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00123",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00132",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00144",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00145",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00146",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00148",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00154",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00155",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00157",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00164",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00167",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00180",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00188",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00189",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00193",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00198",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00218",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00220",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00226",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00228",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00255",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00275",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00279",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00282",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00283",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00289",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00292",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00293",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00303",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00306",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00312",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00313",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00324",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00326",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00330",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00332",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00334",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00348",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00358",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00361",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00364",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00365",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00367",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00372",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00377",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00384",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00385",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00387",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00389",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00391",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00400",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00403",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00404",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00405",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00406",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00407",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00410",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00426",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00428",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00429",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00430",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00433",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00445",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00454",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00455",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00471",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00474",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00475",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00480",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00482",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00486",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00487",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00490",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00493",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00497",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00530",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00545",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00555",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00560",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00563",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00567",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00569",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00577",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00584",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00589",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00593",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00594",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00597",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00604",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00619",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00622",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00626",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00630",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00637",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00638",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00642",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00643",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00645",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00646",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00648",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00650",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00660",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00661",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00665",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00666",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00674",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00675",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00685",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00701",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00703",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00706",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00715",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00720",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00725",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00730",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00731",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00750",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00752",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00757",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00758",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00760",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00764",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00767",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00777",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00795",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00809",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00810",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00813",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00817",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00821",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00828",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00830",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00833",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00834",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00835",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00837",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00846",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00849",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00852",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00862",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00870",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00871",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00873",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00874",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00877",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00885",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00886",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00892",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00896",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00898",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00901",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00905",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00909",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00913",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00917",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00920",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00924",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00930",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00931",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00933",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_easy_00935",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00000",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00004",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00006",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00009",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00013",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00029",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00030",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00032",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00033",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00034",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00039",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00041",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00051",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00053",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00059",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00064",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00077",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00084",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00087",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00088",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00095",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00101",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00106",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00108",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00110",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00117",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00130",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00131",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00134",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00142",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00143",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00152",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00154",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00156",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00169",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00171",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00175",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00176",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00180",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00186",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00191",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00193",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00202",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00205",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00218",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00223",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00233",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00236",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00240",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00243",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00247",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00253",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00254",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00256",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00258",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00271",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00276",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00278",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00290",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00295",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00302",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00306",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00320",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00328",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00331",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00334",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00339",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00344",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00350",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00352",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00361",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00366",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00372",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00380",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00384",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00387",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00391",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00392",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00393",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00395",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00400",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00414",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00417",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00423",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00436",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00447",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00448",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00452",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00457",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00461",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00485",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00486",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00490",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00493",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00494",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00501",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00515",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00518",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00520",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00521",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00522",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00523",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00524",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00525",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00535",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00538",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00545",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00546",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00547",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00549",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00554",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00557",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00558",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00565",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00566",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00571",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00572",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00575",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00587",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00602",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00605",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00606",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00630",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00631",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00633",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00634",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00636",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00645",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00661",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00669",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00675",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00677",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00678",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00680",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00681",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00692",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00693",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00699",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00701",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00703",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00707",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00708",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00715",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00722",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00723",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00725",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00726",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00735",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00743",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00759",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00762",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00764",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00768",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00770",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00771",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00775",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00794",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00807",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00812",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00816",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00818",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00821",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00843",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00845",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00847",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00848",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00852",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00854",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00874",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00879",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00882",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00883",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00891",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00892",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00893",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00897",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00911",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00914",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00919",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00920",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00923",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00927",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00929",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00931",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00934",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00945",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00949",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00953",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00954",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00960",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00977",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00982",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00990",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_00992",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01001",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01004",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01005",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01006",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01014",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01016",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01018",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01022",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01025",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01031",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01039",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01042",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01047",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01048",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01056",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01058",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01065",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01067",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01069",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01080",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01081",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01088",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01090",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01093",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01101",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01104",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_topo_01105",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01129",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01137",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01140",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01156",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01162",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01171",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01172",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01180",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01184",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01194",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01197",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01206",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01216",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01218",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01220",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01222",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01223",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01228",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01240",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01243",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01250",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01251",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01262",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01268",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01280",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01287",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01290",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01297",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01300",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01324",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01327",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01333",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01334",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01338",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01348",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01358",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01360",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01367",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01375",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01391",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01392",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01393",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01400",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01410",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01413",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01417",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01452",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01454",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01464",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01470",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01472",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01478",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01481",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01482",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01490",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01491",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01495",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01498",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01500",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01503",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01507",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01513",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01516",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01521",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01527",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01531",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01539",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01543",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01545",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01546",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01548",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01552",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01555",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01561",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01568",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01578",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01580",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01594",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01595",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01597",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01610",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01612",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01618",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01622",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01623",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01640",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01645",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01646",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01647",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01655",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01657",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01668",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01673",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01679",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01680",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01693",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01696",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01705",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01706",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01713",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01723",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01724",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01725",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01727",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01731",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01732",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01741",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01746",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01747",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01755",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01756",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01757",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01762",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01777",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01780",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01790",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01797",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01804",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01809",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01816",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01818",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01822",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01824",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01829",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01834",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01842",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01846",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01854",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01862",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01866",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01871",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01876",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01882",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01886",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01894",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01896",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01901",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01902",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01906",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01920",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01923",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01926",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01927",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01930",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01938",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01942",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01948",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01949",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01953",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01965",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01969",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01970",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01978",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01980",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01989",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01997",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_01998",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02003",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02012",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02014",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02021",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02027",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02036",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02042",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02058",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02060",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02061",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02066",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02068",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02074",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02079",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02080",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02081",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02093",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02094",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02096",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02101",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02106",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02107",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02119",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02120",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02123",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02128",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02130",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02132",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02138",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02141",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02142",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02146",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02164",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02166",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02181",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02195",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02196",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02203",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02213",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_mh_lex_02222",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00003",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00011",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00016",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00017",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00020",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00021",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00022",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00025",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00026",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00027",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00048",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00050",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00052",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00061",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00066",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00073",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00078",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00082",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00084",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00095",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00104",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00110",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00111",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00120",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00121",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00126",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00129",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00132",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00135",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00140",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00149",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00150",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00151",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00153",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00159",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00160",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00161",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00174",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00185",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00188",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00196",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00202",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00205",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00207",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00211",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00212",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00213",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00216",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00220",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00224",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00225",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00228",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00232",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00235",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00237",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00240",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00256",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00257",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00262",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00267",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00270",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00284",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00289",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00290",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00293",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00294",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00295",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00301",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00312",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00315",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00320",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00327",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00332",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00333",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00337",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00348",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00354",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00359",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00366",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00368",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00372",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00373",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00377",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00385",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00389",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00390",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00397",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00399",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00404",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00406",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00410",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00414",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00427",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00435",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00438",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00440",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00444",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00477",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00479",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00480",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00481",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00483",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00484",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00487",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00492",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00499",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00506",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00508",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00515",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00529",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00540",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    },
+    {
+      "prime_en": "ur_mass_fill_00542",
+      "lexicon_hit": true,
+      "topology_reachable": true,
+      "wall_status": "aligned_both_planes",
+      "audit_status": "gap"
+    }
+  ],
+  "reproduce": "py scripts/build_universal_root_topology_crosswalk_v1.py",
+  "inputs": {
+    "fixture": "tests/fixtures/universal_root_bench_5k_holdout_v1.json",
+    "spec": "docs/final/artifacts/UNIVERSAL_ROOT_TOPOLOGY_CROSSWALK_SPEC_V1.json",
+    "verse_jsonl": "tests/fixtures/logos_verse_4d_topology_stub_v1.jsonl"
+  }
+}

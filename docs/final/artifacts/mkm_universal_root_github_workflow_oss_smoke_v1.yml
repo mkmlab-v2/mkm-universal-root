@@ -1,0 +1,31 @@
+name: OSS smoke
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install minimal deps
+        run: pip install -r requirements.txt
+      - name: Secret pattern scan (OSS subset)
+        run: python3 scripts/check_mkm_secret_patterns_v1.py
+      - name: Launch Gate #1 — OSS path audit
+        run: python3 scripts/check_hardcoded_workspace_paths_v1.py --scope oss --strict
+      - name: Launch Gate #2 — fixture smoke
+        run: python3 scripts/run_universal_root_oss_cursor_smoke_v1.py
+      - name: Contributor fixture stub (validate + pytest)
+        run: |
+          python3 scripts/validate_universal_root_contributor_fixture_v1.py \
+            --json tests/fixtures/contributions/pending/contributor_example_v1.json
+          python3 scripts/run_universal_root_contributor_bench_v1.py \
+            --shard tests/fixtures/contributions/pending/contributor_example_v1.json
+          python3 -m pytest tests/test_universal_root_contributor_fixture_v1.py -q
