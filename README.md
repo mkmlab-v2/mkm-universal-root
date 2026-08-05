@@ -2,32 +2,22 @@
 
 ![OSS smoke](https://github.com/mkmlab-v2/mkm-universal-root/actions/workflows/oss-smoke.yml/badge.svg)
 
-**Offline research harness** for lexicon vs topology integrity on a frozen fixture set (optional local SLM paths). **Not** a hosted SaaS · **not** a drop-in substitute for frontier chat models · **not** investment or medical advice.
+**Who this is for:** researchers/engineers who want an **offline** check that lexicon-plane and topology-plane results stay separate on a frozen fixture (no API keys on the default path).
+
+**What it is not:** a hosted product, a production accuracy SLA, or a drop-in substitute for frontier chat models. Not investment or medical advice.
+
+**Fixture provenance (blunt):** the 500-pair smoke fixture is **author-curated / closed-world** for packaging + dual-plane discipline. It does **not** represent open-world language performance.
 
 License: **MIT** — see [LICENSE](LICENSE)
 
 ## At a glance
 
-**What:** Offline **fixture smoke** — two planes reported separately (lexicon / topology). Research PoC only; not a hosted API and not a drop-in substitute for frontier chat models.
-
 | Try this | Where |
 |----------|--------|
-| **~20s repro** (no OpenAI/HF/Ollama on default path) | [Quickstart](#quickstart-3-commands) — clone → smoke → `exit 0` + artifact JSON |
+| **~20s repro** (no OpenAI/HF/Ollama on default path) | [Quickstart](#quickstart-3-commands) → `exit 0` + artifact JSON |
 | **Third-party repro** | [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2) |
 
-`send_gate: HOLD` · not investment or medical advice. Observe-only UIs are optional and **not** this repo’s benchmark — see [appendix](#appendix--observe-only-ui-not-the-offline-smoke).
-
----
-
-## Public face (5 lines)
-
-1. Research PoC only — **not** investment, medical, or trading advice.
-2. Reproducible claims for **this repo** = **offline fixture bench** only.
-3. Report lexicon/topology (and B0–B3 where used) **separately**; never collapse into one “accuracy” headline.
-4. Metrics are on **fixture benches** — **500-pair** OSS smoke plus optional holdout chain — not open-world warranty.
-5. `send_gate: HOLD` — third-party smoke repro via Discussions #2; no auto-promotion to production.
-
-Methodology docs (optional): **[Honesty Engine public spec](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)** · **[Fact-Lock charter](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)** · **[pilot inquiry notes](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)** (notes ≠ product SLA).
+Observe-only UIs (if any) are **not** this repo’s benchmark — [appendix](#appendix--observe-only-ui-not-the-offline-smoke).
 
 ---
 
@@ -36,22 +26,21 @@ Methodology docs (optional): **[Honesty Engine public spec](docs/MKM_HONESTY_ENG
 ```bash
 git clone https://github.com/mkmlab-v2/mkm-universal-root.git && cd mkm-universal-root
 pip install -r requirements.txt
-python3 scripts/run_universal_root_oss_cursor_smoke_v1.py   # ~20s · exit 0 · no API keys on default path
+python3 scripts/run_universal_root_oss_cursor_smoke_v1.py
 ```
 
-Windows: use `py` instead of `python3`. Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json` (`ok: true`, separate plane metrics).
+Windows: use `py` instead of `python3`.
 
-### Optional: holdout chain (fixture inspect)
+Expected: `reports/universal_root_oss_cursor_smoke_v1_latest.json` with `ok: true` and **separate** lexicon/topology fields (`collapsed_combined_score` stays null).
 
-**Solo OSS:** fork, run, post exit 0 on [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2). Numbers below in “What this proves” are **fixture-only** — not a market SLA.
+### Optional: holdout chain
+
+For people inspecting fixtures beyond the ~20s smoke:
 
 ```bash
-pip install -r requirements.txt   # if not done
 python3 scripts/run_universal_root_bench_5k_holdout_chain_v1.py
 python3 scripts/check_universal_root_bench_5k_v1.py --strict
 ```
-
-Details: **[docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)**
 
 ---
 
@@ -67,13 +56,13 @@ Details: **[docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md](docs/MKM_B2B_PILOT_INQ
 | Dual-plane **raw** metrics; `collapsed_combined_score: null` by design | Single headline “accuracy” or global hallucination claims |
 | Corpus **reference counts** (41k lexicon plane · 31,102 verse / 32,082 atom index labels) — not a warranty on open-world performance | Proprietary bulk dumps or unreleased B-track JSONL |
 
-`[HYPO]` · `research_only` · MIT · not production SLA · not investment or medical advice.
+MIT · research PoC · not production SLA · not investment or medical advice.
 
 ---
 
-## What this proves (fixture bench — not production SLA)
+## Fixture metrics (deep dive — author fixture; not a market claim)
 
-**Track B `[HYPO]` · `research_only` · `send_gate: HOLD`**
+**Research fixture only — not open-world warranty.**
 
 Metrics below are **raw**, on a **500-pair fixture** (`tests/fixtures/nsm_41k_lexicon_crosswalk_500_v1.json`). Do **not** collapse lexicon and topology into one headline KPI.
 
@@ -197,6 +186,12 @@ Manifest: `docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.jso
 Public push (monorepo): `scripts/Push-GitHub-Explicit.ps1 -Acknowledge` only after gates above exit 0.
 
 ---
+
+
+
+## Appendix — methodology notes (optional)
+
+Optional deeper docs (not required to run smoke): [Honesty Engine](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md) · [Fact-Lock charter](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md) · [pilot inquiry notes](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md). These are notes, not a product SLA.
 
 ## Sponsors
 
