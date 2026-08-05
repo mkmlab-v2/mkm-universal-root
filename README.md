@@ -2,37 +2,32 @@
 
 ![OSS smoke](https://github.com/mkmlab-v2/mkm-universal-root/actions/workflows/oss-smoke.yml/badge.svg)
 
-**Neuro-symbolic integrity kit for developers** — pre-built symbolic grids (lexicon + corpus topology) with optional local SLM paths. **Not** a hosted ingestion SaaS · **not** a GPT-4 replacement · **not** investment or medical advice.
+**Offline research harness** for lexicon vs topology integrity on a frozen fixture set (optional local SLM paths). **Not** a hosted SaaS · **not** a drop-in substitute for frontier chat models · **not** investment or medical advice.
 
 License: **MIT** — see [LICENSE](LICENSE)
 
 ## At a glance
 
-**What:** Offline **fixture smoke** for dual-plane lexicon + topology integrity — research PoC, not a hosted API or a drop-in substitute for frontier chat models.
+**What:** Offline **fixture smoke** — two planes reported separately (lexicon / topology). Research PoC only; not a hosted API and not a drop-in substitute for frontier chat models.
 
 | Try this | Where |
 |----------|--------|
-| **~20s repro** (no API keys) | [Quickstart](#quickstart-3-commands) — clone → smoke → `exit 0` |
-| **Observe-only UI** (~30s, no install) | [Logos Studio](https://logos.jema-ai.com/logos-research/studio?q=job_job_suffering_reason&autorun=1&demo=1) · [Track C showroom](https://api.jemaai.cloud/public_showroom_logos_oracle_v6.html?product=1) |
+| **~20s repro** (no OpenAI/HF/Ollama on default path) | [Quickstart](#quickstart-3-commands) — clone → smoke → `exit 0` + artifact JSON |
 | **Third-party repro** | [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2) |
 
-Live pages are **read-only observation** — reproducible metrics for this repo stay on the **offline fixture bench** below. `send_gate: HOLD` · not investment or medical advice.
+`send_gate: HOLD` · not investment or medical advice. Observe-only UIs are optional and **not** this repo’s benchmark — see [appendix](#appendix--observe-only-ui-not-the-offline-smoke).
 
 ---
 
-## MKM Honesty Engine (public spec)
-
-**Research PoC · fixture bench only · not product SLA**
-
-Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)** · **[docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)** · **[B2B pilot inquiry (solo OSS)](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)**
-
-**Public face (5 lines)**
+## Public face (5 lines)
 
 1. Research PoC only — **not** investment, medical, or trading advice.
-2. **Live demos** = read-only observation UI; **offline bench** = reproducible metrics in this repo.
-3. Report **B0–B3** separately; never use collapsed OR (**B4**) as one “accuracy” headline.
-4. Metrics are on **fixture benches** — **500-pair** OSS smoke plus optional **MKM-UR-Bench-5K** holdout (~947 pairs) — not open-world or full-corpus warranty.
-5. `send_gate: HOLD` — third-party smoke repro verified on Discussions #2; no auto-promotion to production.
+2. Reproducible claims for **this repo** = **offline fixture bench** only.
+3. Report lexicon/topology (and B0–B3 where used) **separately**; never collapse into one “accuracy” headline.
+4. Metrics are on **fixture benches** — **500-pair** OSS smoke plus optional holdout chain — not open-world warranty.
+5. `send_gate: HOLD` — third-party smoke repro via Discussions #2; no auto-promotion to production.
+
+Methodology docs (optional): **[Honesty Engine public spec](docs/MKM_HONESTY_ENGINE_PUBLIC_SPEC_v1.md)** · **[Fact-Lock charter](docs/MKM_FACT_LOCK_CONTROL_CHARTER_PUBLIC_v1.md)** · **[pilot inquiry notes](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)** (notes ≠ product SLA).
 
 ---
 
@@ -41,14 +36,14 @@ Methodology distillation (no internal orchestration paths): **[docs/MKM_HONESTY_
 ```bash
 git clone https://github.com/mkmlab-v2/mkm-universal-root.git && cd mkm-universal-root
 pip install -r requirements.txt
-python3 scripts/run_universal_root_oss_cursor_smoke_v1.py   # ~20s · exit 0 · no API keys
+python3 scripts/run_universal_root_oss_cursor_smoke_v1.py   # ~20s · exit 0 · no API keys on default path
 ```
 
-Windows: use `py` instead of `python3`. Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json`
+Windows: use `py` instead of `python3`. Artifact: `reports/universal_root_oss_cursor_smoke_v1_latest.json` (`ok: true`, separate plane metrics).
 
-### B2B verify — MKM-UR-Bench-5K holdout (3 commands)
+### Optional: holdout chain (fixture inspect)
 
-**Solo OSS:** no legal-review gate — **fork, run, post exit 0 on [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2).**
+**Solo OSS:** fork, run, post exit 0 on [Discussions #2](https://github.com/mkmlab-v2/mkm-universal-root/discussions/2). Numbers below in “What this proves” are **fixture-only** — not a market SLA.
 
 ```bash
 pip install -r requirements.txt   # if not done
@@ -56,28 +51,7 @@ python3 scripts/run_universal_root_bench_5k_holdout_chain_v1.py
 python3 scripts/check_universal_root_bench_5k_v1.py --strict
 ```
 
-Holdout headline: B0 **12.21%** · B3 **89.20%** · Δ **+76.99pp** (fixture only). Details: **[docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)**
-
----
-
-## Live demo (~30s · no install)
-
-**`[HYPO]` · `[NON_GATING]` · Track C showroom — not this repo's offline smoke · not a product SLA.**
-
-Open in a browser (**no clone**, **no API keys**):
-
-| Step | What | URL |
-|------|------|-----|
-| 0 | Logos Studio (observe-only · citation lock UI) | https://logos.jema-ai.com/logos-research/studio?q=job_job_suffering_reason&autorun=1&demo=1 |
-| 1 | Job spine (Track C showroom) | https://api.jemaai.cloud/public_showroom_meaning_topology_qa_v2.html?preset=job_job_suffering_reason |
-| 2 | Logos Oracle v6 (graph + lattice) | https://api.jemaai.cloud/public_showroom_logos_oracle_v6.html?product=1 |
-| 3 | Meaning topology graph | https://api.jemaai.cloud/public_showroom_meaning_topology_graph_v1.html |
-
-Showroom pages are **read-only demos**. Reproducible claims for **this OSS repo** stay on the **offline 500-pair fixture** below — do not treat live UI as a benchmark.
-
-**10s walkthrough (Oracle v6 · fixture-adjacent UI, not a product SLA):**
-
-![Oracle v6 showroom walkthrough — 10s](docs/assets/logos_observatory_product_demo_10s.gif)
+Details: **[docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md](docs/MKM_B2B_PILOT_INQUIRY_SPEC_PUBLIC_v1.md)**
 
 ---
 
@@ -88,7 +62,7 @@ Showroom pages are **read-only demos**. Reproducible claims for **this OSS repo*
 | In this repo | Not in this export |
 |--------------|-------------------|
 | Offline smoke runner (`scripts/run_universal_root_oss_cursor_smoke_v1.py`) | Hosted APIs, telemetry, or upload/ingestion |
-| **500-pair** smoke fixture + optional **MKM-UR-Bench-5K** holdout (`tests/fixtures/nsm_41k_lexicon_crosswalk_5000_v1.json`) | Full monorepo, compression KPI lane (~47.5%), live trading |
+| **500-pair** smoke fixture + optional **MKM-UR-Bench-5K** holdout (`tests/fixtures/nsm_41k_lexicon_crosswalk_5000_v1.json`) | Full monorepo, compression product lane, live trading |
 | Topology crosswalk + gate scripts (see `docs/final/artifacts/mkm_universal_root_public_export_manifest_v1.json`) | KO shorts, clinical SOAP, auto-training on user docs |
 | Dual-plane **raw** metrics; `collapsed_combined_score: null` by design | Single headline “accuracy” or global hallucination claims |
 | Corpus **reference counts** (41k lexicon plane · 31,102 verse / 32,082 atom index labels) — not a warranty on open-world performance | Proprietary bulk dumps or unreleased B-track JSONL |
@@ -205,7 +179,7 @@ python3 scripts/run_universal_root_oss_cursor_smoke_v1.py
 Broader **Neuro → Symbolic → Human** architecture context lives in the MKM monorepo (B-track `[HYPO]` · `send_gate: HOLD`):
 
 - **Merged synthesis (SSOT):** `docs/research/NEXT_GEN_HYBRID_AI_MKM_MERGED_LIT_REVIEW_2026-06-20.md` — Hybrid Memory / 4-Vault orchestration **roadmap only** (Y1b); not shipped in this export.
-- **Y1b direction:** on-prem orchestration OS — separate from this Y1 fixture smoke; do **not** merge with compression KPIs (~47.5% parallel enterprise lane) or MS headlines (FAIL-COMP-004).
+- **Y1b direction:** on-prem orchestration OS — separate from this Y1 fixture smoke; do **not** merge with compression product KPIs or MS headlines (FAIL-COMP-004).
 
 Other monorepo-only benches (e.g. KO shorts STT timing under `scripts/run_ko_shorts_timing_compare_v1.py`) are **not** part of `mkm-universal-root` export smoke.
 
